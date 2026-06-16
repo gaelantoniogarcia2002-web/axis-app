@@ -1,0 +1,54 @@
+.section {
+  background: var(--color-navy);
+  padding: var(--spacing-2xl) 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--spacing-lg);
+}
+
+.card {
+  text-align: center;
+  padding: var(--spacing-xl) var(--spacing-lg);
+  border-left: 1px solid rgba(255,255,255,0.1);
+}
+
+.card:first-child {
+  border-left: none;
+}
+
+.valor {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-weight: 700;
+  color: var(--color-gold);
+  line-height: 1;
+  margin-bottom: var(--spacing-sm);
+}
+
+.etiqueta {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.7);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .card:nth-child(1) { border-left: none; }
+  .card:nth-child(2) { border-left: 1px solid rgba(255,255,255,0.1); }
+  .card:nth-child(3) { border-left: none; }
+}
+
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}

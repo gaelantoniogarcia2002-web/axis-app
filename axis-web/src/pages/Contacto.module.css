@@ -1,0 +1,114 @@
+.hero {
+  background: linear-gradient(135deg, #0a1e30 0%, #102B46 100%);
+  padding: calc(var(--header-height) + var(--spacing-3xl)) 0 var(--spacing-3xl);
+}
+
+.eyebrow {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: var(--spacing-md);
+}
+
+.title {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  color: var(--color-white);
+  margin-bottom: var(--spacing-lg);
+}
+
+.subtitle {
+  font-size: 1.0625rem;
+  color: rgba(255,255,255,0.72);
+  max-width: 520px;
+  line-height: 1.7;
+}
+
+.content {
+  padding: var(--spacing-3xl) 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: var(--spacing-3xl);
+  align-items: start;
+}
+
+.infoCol {}
+
+.infoTitle,
+.formTitle {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  color: var(--color-navy);
+  margin-bottom: var(--spacing-md);
+}
+
+.infoDesc {
+  font-size: 0.9375rem;
+  color: var(--color-gray-600);
+  line-height: 1.7;
+  margin-bottom: var(--spacing-xl);
+}
+
+.infoList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
+
+.infoItem {
+  display: flex;
+  gap: var(--spacing-md);
+  align-items: flex-start;
+}
+
+.infoIcon {
+  width: 40px;
+  height: 40px;
+  background: var(--color-navy);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-gold);
+  font-size: 0.875rem;
+  flex-shrink: 0;
+}
+
+.infoLabel {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-gray-400);
+  margin-bottom: 4px;
+}
+
+.infoVal {
+  font-size: 0.9375rem;
+  color: var(--color-gray-900);
+  line-height: 1.6;
+}
+
+.formCol {
+  background: var(--color-gray-50);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-card);
+  padding: var(--spacing-2xl);
+}
+
+.formTitle {
+  margin-bottom: var(--spacing-xl);
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

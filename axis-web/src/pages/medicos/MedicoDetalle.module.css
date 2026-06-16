@@ -1,0 +1,217 @@
+.topBar {
+  background: var(--color-gray-50);
+  border-bottom: 1px solid var(--color-gray-200);
+  padding: var(--spacing-md) 0;
+  margin-top: var(--header-height);
+}
+
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--color-gray-600);
+  transition: color var(--transition-fast);
+}
+
+.back:hover {
+  color: var(--color-navy);
+}
+
+.perfil {
+  padding: var(--spacing-3xl) 0;
+}
+
+.perfilGrid {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: var(--spacing-3xl);
+  align-items: start;
+}
+
+.avatarCol {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.avatarCol > :first-child {
+  width: 100%;
+  height: 280px;
+  border-radius: var(--radius-card);
+}
+
+.metaCard {
+  background: var(--color-gray-50);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-card);
+  padding: var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.metaItem {
+  display: flex;
+  gap: var(--spacing-md);
+  align-items: flex-start;
+}
+
+.metaIcon {
+  color: var(--color-gold);
+  margin-top: 3px;
+  width: 16px;
+  flex-shrink: 0;
+}
+
+.metaLabel {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-gray-400);
+  margin-bottom: 2px;
+}
+
+.metaVal {
+  font-size: 0.9375rem;
+  color: var(--color-gray-900);
+  font-weight: 500;
+}
+
+.badges {
+  margin-bottom: var(--spacing-md);
+}
+
+.nombre {
+  font-family: var(--font-serif);
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: 700;
+  color: var(--color-navy);
+  margin-bottom: var(--spacing-xs);
+  line-height: 1.2;
+}
+
+.especialidadNombre {
+  font-size: 1.125rem;
+  color: var(--color-gold);
+  font-weight: 500;
+  margin-bottom: var(--spacing-xl);
+}
+
+.section {
+  margin-bottom: var(--spacing-xl);
+  padding-bottom: var(--spacing-xl);
+  border-bottom: 1px solid var(--color-gray-100);
+}
+
+.section:last-of-type {
+  border-bottom: none;
+}
+
+.sectionTitle {
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-gray-400);
+  margin-bottom: var(--spacing-md);
+}
+
+.desc {
+  font-size: 1rem;
+  color: var(--color-gray-600);
+  line-height: 1.8;
+}
+
+.procedimientos {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.procedimientos li {
+  font-size: 0.9375rem;
+  color: var(--color-gray-600);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.procedimientos li::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background: var(--color-gold);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.cta {
+  margin-top: var(--spacing-xl);
+}
+
+.colegas {
+  background: var(--color-gray-50);
+  padding: var(--spacing-2xl) 0;
+  border-top: 1px solid var(--color-gray-200);
+}
+
+.colegasTitulo {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  color: var(--color-navy);
+  margin-bottom: var(--spacing-xl);
+}
+
+.colegasGrid {
+  display: flex;
+  gap: var(--spacing-lg);
+  flex-wrap: wrap;
+}
+
+.colegaCard {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  background: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-card);
+  padding: var(--spacing-md) var(--spacing-lg);
+  text-decoration: none;
+  color: inherit;
+  transition: box-shadow var(--transition-fast), border-color var(--transition-fast);
+  flex: 1;
+  min-width: 240px;
+}
+
+.colegaCard:hover {
+  box-shadow: var(--shadow-card);
+  border-color: var(--color-gold-light);
+}
+
+.colegaNombre {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--color-navy);
+  margin-bottom: 2px;
+}
+
+.colegaEsp {
+  font-size: 0.8125rem;
+  color: var(--color-gold);
+}
+
+@media (max-width: 768px) {
+  .perfilGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .avatarCol > :first-child {
+    height: 200px;
+    max-width: 200px;
+  }
+}

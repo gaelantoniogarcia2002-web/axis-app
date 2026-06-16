@@ -1,0 +1,29 @@
+.avatar {
+  object-fit: cover;
+  border-radius: var(--radius-card);
+}
+
+.placeholder {
+  border-radius: var(--radius-card);
+  background: linear-gradient(135deg, var(--color-navy) 0%, #1a3d5c 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.initials {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  color: var(--color-gold);
+  letter-spacing: 0.05em;
+}
+
+.sm { width: 48px; height: 48px; }
+.sm .initials { font-size: 1rem; }
+
+.md { width: 80px; height: 80px; }
+.md .initials { font-size: 1.5rem; }
+
+.lg { width: 160px; height: 160px; }
+.lg .initials { font-size: 2.5rem; }

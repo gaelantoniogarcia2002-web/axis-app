@@ -1,0 +1,157 @@
+.hero {
+  position: relative;
+  background: linear-gradient(135deg, #0a1e30 0%, #102B46 100%);
+  padding: calc(var(--header-height) + var(--spacing-3xl)) 0 var(--spacing-3xl);
+  overflow: hidden;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 80% 50%, rgba(201,168,76,0.08) 0%, transparent 60%);
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1;
+}
+
+.eyebrow {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: var(--spacing-md);
+}
+
+.title {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  color: var(--color-white);
+  margin-bottom: var(--spacing-lg);
+}
+
+.subtitle {
+  font-size: 1.125rem;
+  color: rgba(255,255,255,0.75);
+  max-width: 580px;
+  line-height: 1.7;
+}
+
+.mision {
+  padding: var(--spacing-3xl) 0;
+}
+
+.misionGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-3xl);
+  align-items: start;
+}
+
+.text {
+  font-size: 1rem;
+  color: var(--color-gray-600);
+  line-height: 1.8;
+  margin-bottom: var(--spacing-lg);
+}
+
+.misionActions {
+  margin-top: var(--spacing-xl);
+}
+
+.misionStats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-md);
+}
+
+.statCard {
+  background: var(--color-gray-50);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-card);
+  padding: var(--spacing-xl);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.statVal {
+  font-family: var(--font-serif);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-navy);
+}
+
+.statLabel {
+  font-size: 0.875rem;
+  color: var(--color-gray-600);
+  font-weight: 500;
+}
+
+.valores {
+  padding: var(--spacing-3xl) 0;
+  background: var(--color-gray-50);
+}
+
+.valoresGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-xl);
+}
+
+.valorCard {
+  background: var(--color-white);
+  border-radius: var(--radius-card);
+  padding: var(--spacing-xl);
+  border: 1px solid var(--color-gray-200);
+}
+
+.valorIcon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  background: var(--color-navy);
+  color: var(--color-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  margin-bottom: var(--spacing-lg);
+}
+
+.valorTitulo {
+  font-family: var(--font-serif);
+  font-size: 1.125rem;
+  color: var(--color-navy);
+  margin-bottom: var(--spacing-sm);
+}
+
+.valorDesc {
+  font-size: 0.9375rem;
+  color: var(--color-gray-600);
+  line-height: 1.7;
+}
+
+.vumi {
+  background: var(--color-navy);
+  padding: var(--spacing-3xl) 0;
+}
+
+.vumiInner {
+  max-width: 680px;
+}
+
+@media (max-width: 768px) {
+  .misionGrid,
+  .valoresGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .misionStats {
+    order: -1;
+  }
+}

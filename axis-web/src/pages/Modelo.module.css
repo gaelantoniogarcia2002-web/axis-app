@@ -1,0 +1,174 @@
+.hero {
+  background: linear-gradient(135deg, #0a1e30 0%, #102B46 100%);
+  padding: calc(var(--header-height) + var(--spacing-3xl)) 0 var(--spacing-3xl);
+}
+
+.eyebrow {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: var(--spacing-md);
+}
+
+.title {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  color: var(--color-white);
+  margin-bottom: var(--spacing-lg);
+}
+
+.subtitle {
+  font-size: 1.0625rem;
+  color: rgba(255,255,255,0.72);
+  max-width: 560px;
+  line-height: 1.7;
+}
+
+.pasos {}
+
+.paso {
+  padding: var(--spacing-3xl) 0;
+}
+
+.pasoNavy {
+  background: var(--color-navy);
+}
+
+.pasoWhite {
+  background: var(--color-white);
+  border-top: 1px solid var(--color-gray-100);
+  border-bottom: 1px solid var(--color-gray-100);
+}
+
+.pasoGrid {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: var(--spacing-3xl);
+  align-items: start;
+}
+
+.pasoNum {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.numLabel {
+  font-family: var(--font-serif);
+  font-size: 4rem;
+  font-weight: 700;
+  color: var(--color-gold);
+  line-height: 1;
+}
+
+.numIcon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--color-gold);
+  color: var(--color-navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.375rem;
+}
+
+.pasoNavy .numIcon {
+  background: rgba(201,168,76,0.15);
+  color: var(--color-gold);
+}
+
+.pasoContent {}
+
+.pasoEyebrow {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: var(--spacing-sm);
+}
+
+.pasoTitulo {
+  font-family: var(--font-serif);
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  font-weight: 700;
+  margin-bottom: var(--spacing-xs);
+}
+
+.pasoSub {
+  font-size: 1.0625rem;
+  font-weight: 500;
+  margin-bottom: var(--spacing-lg);
+}
+
+.pasoDesc {
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: var(--spacing-lg);
+}
+
+.puntos {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.punto {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  font-size: 0.9375rem;
+}
+
+.punto::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-gold);
+  flex-shrink: 0;
+}
+
+/* Color variants */
+.lightTitle { color: var(--color-white); }
+.darkTitle { color: var(--color-navy); }
+.lightText { color: rgba(255,255,255,0.75); }
+.darkText { color: var(--color-gray-600); }
+.lightGold { color: var(--color-gold-light); }
+.darkGold { color: var(--color-gold); }
+.lightMuted { color: rgba(255,255,255,0.5); }
+.darkMuted { color: var(--color-gray-400); }
+
+.cta {
+  padding: var(--spacing-3xl) 0;
+  text-align: center;
+  background: var(--color-gray-50);
+}
+
+.ctaActions {
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .pasoGrid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xl);
+  }
+
+  .pasoNum {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .numLabel {
+    font-size: 2.5rem;
+  }
+}

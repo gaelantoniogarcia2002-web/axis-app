@@ -1,0 +1,19 @@
+.badge {
+  display: inline-block;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.625rem;
+  border-radius: var(--radius-full);
+  background: var(--color-navy-10);
+  color: var(--color-navy);
+  white-space: nowrap;
+}
+
+.cardiometabolico { background: rgba(220, 53, 69, 0.1); color: #c0392b; }
+.cirugia { background: rgba(52, 152, 219, 0.1); color: #1a6fa8; }
+.oncologia_piel { background: rgba(155, 89, 182, 0.1); color: #7d3c98; }
+.digestivo_metabolico { background: rgba(39, 174, 96, 0.1); color: #1e8449; }
+.mujer_pediatria { background: rgba(231, 76, 60, 0.1); color: #a93226; }
+.neuro_complementarias { background: rgba(243, 156, 18, 0.1); color: #b7770d; }

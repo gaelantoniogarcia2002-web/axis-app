@@ -1,0 +1,122 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-lg);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-navy);
+}
+
+.input {
+  padding: 0.75rem var(--spacing-md);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  color: var(--color-gray-900);
+  background: var(--color-white);
+  outline: none;
+  transition: border-color var(--transition-fast);
+  width: 100%;
+}
+
+.input:focus {
+  border-color: var(--color-navy);
+}
+
+.input::placeholder {
+  color: var(--color-gray-400);
+}
+
+.inputError {
+  border-color: #dc3545;
+}
+
+.select {
+  cursor: pointer;
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.error {
+  font-size: 0.8125rem;
+  color: #dc3545;
+}
+
+.errorGlobal {
+  font-size: 0.9rem;
+  color: #dc3545;
+  background: rgba(220,53,69,0.08);
+  padding: var(--spacing-md);
+  border-radius: var(--radius-sm);
+}
+
+.submit {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg);
+  flex-wrap: wrap;
+}
+
+.note {
+  font-size: 0.8125rem;
+  color: var(--color-gray-400);
+}
+
+.success {
+  text-align: center;
+  padding: var(--spacing-3xl) var(--spacing-xl);
+}
+
+.successIcon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--color-navy);
+  color: var(--color-gold);
+  font-size: 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--spacing-lg);
+}
+
+.successTitle {
+  font-family: var(--font-serif);
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--color-navy);
+  margin-bottom: var(--spacing-md);
+}
+
+.successDesc {
+  font-size: 1rem;
+  color: var(--color-gray-600);
+  line-height: 1.7;
+  max-width: 440px;
+  margin: 0 auto var(--spacing-xl);
+}
+
+@media (max-width: 640px) {
+  .row {
+    grid-template-columns: 1fr;
+  }
+}
