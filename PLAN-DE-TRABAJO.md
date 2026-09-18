@@ -14,9 +14,9 @@ La carpeta contiene:
   (gafete, tarjeta de presentación, llavero, empaque): `Mkp 3.png`, `Mkp 4.png`, `Mkp 5.png`,
   `Mkp 6.png`. Confirman el naming de marca: **"bädi MEDICAL GROUP"**, tagline
   **"SALUD QUE ACOMPAÑA"**. Ya descargadas a `src/assets/images/mockups/`.
-- `Patrones/` — **4 imágenes** de texturas/patrones decorativos de marca:
-  `Patronrs-01.png`, `Patronrs-02.png`, `patrones-05.jpg`, `patrones-06.jpg`. **Aún no
-  descargadas al repo.**
+- `Patrones/` — **4 imágenes** de texturas/patrones decorativos de marca (4500×4500):
+  `Patronrs-01.png`, `Patronrs-02.png`, `patrones-05.jpg`, `patrones-06.jpg`. ✅ Ya
+  descargadas a `src/assets/images/patrones/`.
 - `Manual de Marca bädi.pdf` (31 MB, en la raíz de la carpeta) — brand book oficial. Ver
   resumen en la sección 1.1.
 
@@ -121,7 +121,7 @@ src/assets/
 │   ├── general/    ← fotos institucionales, hospital, misceláneos — PENDIENTE
 │   ├── logo/       ← ✅ logo.jpg (4500×4500, fondo blanco — falta variante negativa/transparente)
 │   ├── mockups/    ← ✅ Mkp 3-6.png (piezas de marca: gafete, tarjeta, llavero, empaque)
-│   └── patrones/   ← patrones/texturas de marca (Patrones/ en Drive) — PENDIENTE de descargar
+│   └── patrones/   ← ✅ patron-01/02.png, patron-05/06.jpg (texturas decorativas de marca)
 └── fonts/          ← archivos de "Batica Sans" (tipografía oficial según Manual de Marca),
                         una vez se suban a TIPOGRAFÍAS/ en Drive — PENDIENTE
 ```
@@ -154,12 +154,12 @@ Ya resueltos gracias al Manual de Marca y a la confirmación directa del cliente
   contextuales elegidas: `#DC2626` urgencias, `#16A34A` prevención, `#C9A84C` eventos.
 - ✅ Tipografía oficial: **Batica Sans**.
 - ✅ Logo principal descargado (`src/assets/images/logo/logo.jpg`, fondo blanco).
+- ✅ 4 imágenes de `Patrones/` descargadas (`src/assets/images/patrones/`).
 
 Lo que sigue pendiente:
 
 - Falta la **variante negativa/transparente del logo** (para footer oscuro y aplicaciones en
   negativo) — solo tenemos la versión sobre fondo blanco.
-- Falta descargar los 4 archivos de `Patrones/` al repo (`src/assets/images/patrones/`).
 - Faltan los archivos de fuente de **Batica Sans** — `TIPOGRAFÍAS/` en Drive sigue vacía.
 - Falta que se suban fotos de médicos e imágenes hero a Drive (no hay ninguna todavía en
   ninguna carpeta ni en el manual).
