@@ -7,7 +7,9 @@
 
 La carpeta contiene:
 
-- `TIPOGRAFÍAS/` — subcarpeta **vacía**, sin archivos cargados.
+- `TIPOGRAFÍAS/` — **2 archivos de fuente**: `BaticaSans-Regular.otf` (tipografía principal,
+  confirmada por el manual) y `Myriad Pro Regular.ttf` (tipografía secundaria, probablemente
+  para cuerpo de texto). ✅ Ya descargadas a `src/assets/fonts/`.
 - `LOGO/` — subcarpeta **vacía**, sin archivos cargados (aún no hay un archivo de logo
   exportable, ej. SVG/PNG con fondo transparente).
 - `Mockups/` — **4 imágenes PNG** con el diseño de marca aplicado a piezas físicas
@@ -41,8 +43,10 @@ confirmados oficialmente por el manual:
   eficiencia, compromiso con el paciente, resultados.
 - **Público objetivo**: pacientes que buscan especialistas coordinados y atención integral,
   no solo una consulta puntual.
-- **Tipografía oficial: "Batica Sans"** — reemplaza a Playfair Display + Inter, que es lo que
-  usa hoy el sitio.
+- **Tipografía oficial: "Batica Sans"** (para marca/títulos) — reemplaza a Playfair Display +
+  Inter, que es lo que usa hoy el sitio. Junto a ella se recibió también **Myriad Pro**,
+  probablemente como tipografía secundaria para cuerpo de texto. Ambas ya están en
+  `src/assets/fonts/`, solo en peso Regular.
 - **Reglas de uso del logo**: incluye isotipo, logotipo e imagotipo (cada uno con su área de
   reserva); variantes por contexto (urgencias/alto impacto, eventos y comunicación premium,
   documentos corporativos monocromáticos, uso general en sitio web/redes), positivo y
@@ -107,9 +111,13 @@ archivo de logo aislado y aplicar los cambios en el código:
 - [ ] `src/components/home/QueSesAxis.tsx` — renombrar componente (`QueEsBadi.tsx`) y copy
       "¿Qué es AXIS?"
 - [ ] `roadmap.md` — actualizar o archivar como referencia histórica del naming anterior
-- [ ] `src/styles/globals.css` — reemplazar tipografías `Playfair Display` + `Inter` por
-      **Batica Sans** (tipografía oficial del manual) — pendiente conseguir los archivos de
-      fuente, ya que `TIPOGRAFÍAS/` en Drive sigue vacía
+- [ ] `src/styles/globals.css` — reemplazar tipografías `Playfair Display` + `Inter` (Google
+      Fonts vía `<link>`) por `@font-face` self-hosted con **Batica Sans**
+      (`src/assets/fonts/BaticaSans-Regular.otf`, para títulos/marca) y **Myriad Pro**
+      (`src/assets/fonts/MyriadPro-Regular.ttf`, para cuerpo de texto). Solo hay peso
+      "Regular" de cada una — si se necesitan bold/italic hay que pedirlos.
+- [ ] `index.html` — quitar los `<link>` de Google Fonts (Playfair Display/Inter) ya que se
+      pasa a fuentes self-hosted
 - [ ] `src/styles/globals.css` — actualizar `--color-navy` → `#002C83` y agregar
       `--color-blue-primary: #0270FD` (o reemplazar el rol de `--color-gold` según se defina
       el uso de acentos); revisar todos los componentes que referencian estos tokens
@@ -122,16 +130,14 @@ archivos en cuanto se suban a Drive:
 ```
 src/assets/
 ├── images/
-│   ├── logo/       ← logo Badi Medical Group (variantes color/mono, SVG preferido) — PENDIENTE
+│   ├── logo/       ← ✅ logo.jpg, logo-horizontal.jpg, logo-isotipo.jpg, logo-texto.jpg
+│   │                  (4500×4500, fondo blanco — no existe variante negativa, confirmado)
 │   ├── hero/       ← imágenes hero por página (Home, Nosotros, etc.) — PENDIENTE
 │   ├── medicos/    ← fotos de perfil de cada médico — PENDIENTE
 │   ├── general/    ← fotos institucionales, hospital, misceláneos — PENDIENTE
-│   ├── logo/       ← ✅ logo.jpg, logo-horizontal.jpg, logo-isotipo.jpg, logo-texto.jpg
-│   │                  (4500×4500, fondo blanco — no existe variante negativa, confirmado)
 │   ├── mockups/    ← ✅ Mkp 3-6.png (piezas de marca: gafete, tarjeta, llavero, empaque)
 │   └── patrones/   ← ✅ patron-01/02.png, patron-05/06.jpg (texturas decorativas de marca)
-└── fonts/          ← archivos de "Batica Sans" (tipografía oficial según Manual de Marca),
-                        una vez se suban a TIPOGRAFÍAS/ en Drive — PENDIENTE
+└── fonts/          ← ✅ BaticaSans-Regular.otf, MyriadPro-Regular.ttf
 ```
 
 ## 5. Pasos siguientes (cuando Drive tenga contenido)
@@ -142,8 +148,8 @@ src/assets/
    los assets reales, actualizando los `import` en los componentes (`Hero.tsx`,
    `MedicoCard.tsx`, `Header.tsx`/`Footer.tsx` para el logo).
 3. Optimizar imágenes (compresión, WebP/AVIF donde aplique) antes de commitear.
-4. Si se reciben tipografías propias en `TIPOGRAFÍAS/`, decidir self-host (`@font-face` en
-   `globals.css` + archivos en `src/assets/fonts/`) vs. mantener Google Fonts.
+4. ✅ Tipografías recibidas (Batica Sans + Myriad Pro) — falta declarar los `@font-face` en
+   `globals.css` y reemplazar las referencias a Playfair Display/Inter en los componentes.
 5. Aplicar el checklist de rebranding de la sección 3 con el copy definitivo del cliente.
 6. `pnpm build` y revisión visual de las 6 páginas antes de mergear a `main`.
 
@@ -160,7 +166,8 @@ Ya resueltos gracias al Manual de Marca y a la confirmación directa del cliente
   misión/visión/valores.
 - ✅ Paleta de color primaria: `#0270FD` (azul primario) y `#002C83` (azul oscuro/secundario);
   contextuales elegidas: `#DC2626` urgencias, `#16A34A` prevención, `#C9A84C` eventos.
-- ✅ Tipografía oficial: **Batica Sans**.
+- ✅ Tipografías: **Batica Sans** (principal) y **Myriad Pro** (secundaria), archivos
+  descargados en `src/assets/fonts/` (solo peso Regular de cada una).
 - ✅ Las 4 variantes del logo descargadas (vertical, horizontal, isotipo, solo texto), todas
   sobre fondo blanco. Confirmado con el cliente: no existe variante negativa.
 - ✅ 4 imágenes de `Patrones/` descargadas (`src/assets/images/patrones/`).
@@ -170,7 +177,8 @@ Lo que sigue pendiente:
 - El logo solo existe en JPG con fondo blanco — para usarlo sobre el footer navy oscuro
   actual conviene recortar/usar `logo-isotipo.jpg` o `logo-texto.jpg` con tratamiento, o pedir
   un PNG transparente si el resultado visual no convence.
-- Faltan los archivos de fuente de **Batica Sans** — `TIPOGRAFÍAS/` en Drive sigue vacía.
+- Solo hay peso "Regular" de Batica Sans y Myriad Pro — si el diseño final pide bold/italic
+  para títulos, hay que pedirlos.
 - Falta que se suban fotos de médicos e imágenes hero a Drive (no hay ninguna todavía en
   ninguna carpeta ni en el manual).
 - Falta confirmar el dominio de email de contacto definitivo (hoy `contacto@axisredmedica.mx`).
