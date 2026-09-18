@@ -14,9 +14,40 @@ La carpeta contiene:
   (gafete, tarjeta de presentación, llavero, empaque): `Mkp 3.png`, `Mkp 4.png`, `Mkp 5.png`,
   `Mkp 6.png`. Confirman el naming de marca: **"bädi MEDICAL GROUP"**, tagline
   **"SALUD QUE ACOMPAÑA"**. Ya descargadas a `src/assets/images/mockups/`.
+- `Patrones/` — **4 imágenes** de texturas/patrones decorativos de marca:
+  `Patronrs-01.png`, `Patronrs-02.png`, `patrones-05.jpg`, `patrones-06.jpg`. **Aún no
+  descargadas al repo.**
+- `Manual de Marca bädi.pdf` (31 MB, en la raíz de la carpeta) — brand book oficial. Ver
+  resumen en la sección 1.1.
 
 Aún no hay fotos de médicos, imágenes hero, ni un archivo de logo aislado y reutilizable
-(favicon, header, etc.) — solo referencias visuales dentro de los mockups.
+(favicon, header, etc.) — solo referencias visuales dentro de los mockups y del manual.
+
+### 1.1 Resumen del Manual de Marca
+
+El PDF pesa 31 MB (supera el límite de descarga directa de la herramienta de 10 MB), así que
+se leyó su contenido textual pero **no se pudieron extraer visualmente los códigos de color
+exactos** de la sección 4 (paleta cromática, son swatches sin texto asociado). Puntos
+confirmados oficialmente por el manual:
+
+- **Significado de la marca**: "bädi" viene del otomí, "el que sabe" — conocimiento médico
+  al servicio del paciente. Concepto central: *"bädi transforma el conocimiento en cuidado"*.
+- **Personalidad de marca**: sabia, experta, humana, precisa, contemporánea, confiable, premium.
+- **Misión**: brindar atención médica integral y especializada mediante una red coordinada de
+  profesionales de alta trayectoria.
+- **Visión**: ser una red médica de referencia por excelencia clínica y coordinación
+  multidisciplinaria.
+- **Valores**: excelencia clínica, atención integral, profesionalismo, colaboración,
+  eficiencia, compromiso con el paciente, resultados.
+- **Público objetivo**: pacientes que buscan especialistas coordinados y atención integral,
+  no solo una consulta puntual.
+- **Tipografía oficial: "Batica Sans"** — reemplaza a Playfair Display + Inter, que es lo que
+  usa hoy el sitio.
+- **Reglas de uso del logo**: área de reserva mínima, variantes por contexto (urgencias/alto
+  impacto, eventos y comunicación premium, documentos corporativos monocromáticos, uso
+  general en sitio web/redes), positivo y negativo, usos incorrectos.
+- **Paleta de colores**: ⚠️ pendiente — no se pudo leer la sección 4 por el límite de tamaño
+  del archivo (ver sección 7).
 
 ## 2. Estado actual del repo
 
@@ -40,8 +71,9 @@ Confirmado con el usuario: **es el mismo proyecto**, solo cambia de marca de "AX
 
 ## 3. Checklist de rebranding (texto y metadata)
 
-Puntos exactos en el código donde aparece "AXIS" y deben actualizarse cuando el cliente
-confirme el naming/copy definitivo de Badi Medical Group:
+Puntos exactos en el código donde aparece "AXIS" y deben actualizarse. El naming
+("bädi Medical Group", tagline "SALUD QUE ACOMPAÑA") ya está confirmado por el Manual de
+Marca y los mockups; lo que falta es la paleta de color exacta y aplicar los cambios:
 
 - [ ] `src/data/config.ts` — `nombre`, `nombreCompleto`, `descripcion`, `keywords`, label
       "Modelo AXIS" en `NAV_LINKS`
@@ -52,8 +84,11 @@ confirme el naming/copy definitivo de Badi Medical Group:
 - [ ] `src/components/home/QueSesAxis.tsx` — renombrar componente (`QueEsBadi.tsx`) y copy
       "¿Qué es AXIS?"
 - [ ] `roadmap.md` — actualizar o archivar como referencia histórica del naming anterior
-- [ ] `src/styles/globals.css` — validar si la paleta navy/gold (`--color-navy`, `--color-gold`)
-      se mantiene o cambia con la nueva identidad de marca (pendiente de definir con cliente)
+- [ ] `src/styles/globals.css` — reemplazar tipografías `Playfair Display` + `Inter` por
+      **Batica Sans** (tipografía oficial del manual) — pendiente conseguir los archivos de
+      fuente, ya que `TIPOGRAFÍAS/` en Drive sigue vacía
+- [ ] `src/styles/globals.css` — actualizar `--color-navy` / `--color-gold` con la paleta
+      oficial del manual en cuanto se obtengan los códigos exactos (sección 7)
 
 ## 4. Estructura de `/src/assets` preparada
 
@@ -67,10 +102,10 @@ src/assets/
 │   ├── hero/       ← imágenes hero por página (Home, Nosotros, etc.) — PENDIENTE
 │   ├── medicos/    ← fotos de perfil de cada médico — PENDIENTE
 │   ├── general/    ← fotos institucionales, hospital, misceláneos — PENDIENTE
-│   └── mockups/    ← ✅ Mkp 3-6.png (piezas de marca: gafete, tarjeta, llavero, empaque)
-└── fonts/          ← tipografías de la carpeta TIPOGRAFÍAS de Drive, si se decide self-host
-                        en vez de usar Google Fonts (actualmente Playfair Display + Inter
-                        vía <link> en index.html) — PENDIENTE
+│   ├── mockups/    ← ✅ Mkp 3-6.png (piezas de marca: gafete, tarjeta, llavero, empaque)
+│   └── patrones/   ← patrones/texturas de marca (Patrones/ en Drive) — PENDIENTE de descargar
+└── fonts/          ← archivos de "Batica Sans" (tipografía oficial según Manual de Marca),
+                        una vez se suban a TIPOGRAFÍAS/ en Drive — PENDIENTE
 ```
 
 ## 5. Pasos siguientes (cuando Drive tenga contenido)
@@ -93,12 +128,18 @@ la rama `claude/drive-connection-2lkv44`, sin tocar `main` hasta validación del
 
 ## 7. Pendientes / bloqueos
 
+- **Paleta de color exacta** — el Manual de Marca (`Manual de Marca bädi.pdf`, 31 MB) supera
+  el límite de descarga de la herramienta de Drive (10 MB), así que no se pudo ver la
+  sección 4 (swatches de color, sin texto extraíble). Para desbloquear esto, lo más simple es
+  que el cliente exporte/comparta solo la página de la paleta de colores como imagen o PDF
+  más liviano.
 - Falta un archivo de **logo** reutilizable (SVG/PNG transparente) — la carpeta `LOGO/` en
-  Drive sigue vacía; los mockups solo lo muestran aplicado a piezas físicas.
-- Falta que se suban fotos de médicos, imágenes hero y tipografías reales a Drive.
-- Naming de marca visible en los mockups: **"bädi MEDICAL GROUP"**, tagline
-  **"SALUD QUE ACOMPAÑA"** — falta confirmar con el cliente si este es el texto final para
-  header/footer/metadata, y el dominio de email de contacto definitivo.
-- Falta confirmar si la paleta de color actual del sitio (navy/gold) se conserva o cambia
-  con la nueva identidad (los mockups usan un estilo propio que conviene revisar antes de
-  tocar `globals.css`).
+  Drive sigue vacía; los mockups y el manual solo lo muestran aplicado a piezas/mockups.
+- Falta descargar los 4 archivos de `Patrones/` al repo (`src/assets/images/patrones/`).
+- Faltan los archivos de la tipografía oficial **Batica Sans** — `TIPOGRAFÍAS/` en Drive
+  sigue vacía.
+- Falta que se suban fotos de médicos e imágenes hero a Drive (no hay ninguna todavía en
+  ninguna carpeta ni en el manual).
+- Naming y tono de marca ya confirmados formalmente por el manual: **"bädi Medical Group"**,
+  tagline **"SALUD QUE ACOMPAÑA"**, misión/visión/valores — falta solo aplicarlos en el
+  código (checklist sección 3) y confirmar el dominio de email de contacto definitivo.
