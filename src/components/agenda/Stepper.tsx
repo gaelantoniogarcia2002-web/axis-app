@@ -22,10 +22,13 @@ export default function Stepper({ pasoActual }: StepperProps) {
           <div key={paso.num} className={styles.pasoWrap}>
             {i > 0 && <span className={[styles.linea, (completado || activo) && styles.lineaActiva].filter(Boolean).join(' ')} />}
             <div className={styles.paso}>
-              <span className={[styles.circulo, activo && styles.circuloActivo, completado && styles.circuloCompletado].filter(Boolean).join(' ')}>
+              <span
+                className={[styles.circulo, activo && styles.circuloActivo, completado && styles.circuloCompletado].filter(Boolean).join(' ')}
+                aria-label={`Paso ${paso.num}: ${paso.titulo}${completado ? ' (completado)' : ''}`}
+              >
                 <FontAwesomeIcon icon={completado ? faCheck : paso.icon} />
               </span>
-              <div>
+              <div className={styles.pasoTexto}>
                 <p className={styles.pasoTitulo}>{paso.num}. {paso.titulo}</p>
                 <p className={styles.pasoDesc}>{paso.desc}</p>
               </div>

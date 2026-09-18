@@ -10,10 +10,15 @@
   gap: var(--spacing-lg);
 }
 
+.row > * {
+  min-width: 0;
+}
+
 .field {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-xs);
+  min-width: 0;
 }
 
 .label {

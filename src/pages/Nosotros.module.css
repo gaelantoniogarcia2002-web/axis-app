@@ -51,6 +51,10 @@
   align-items: start;
 }
 
+.misionGrid > * {
+  min-width: 0;
+}
+
 .text {
   font-size: 1rem;
   color: var(--color-gray-600);
@@ -66,6 +70,10 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--spacing-md);
+}
+
+.misionStats > * {
+  min-width: 0;
 }
 
 .statCard {
@@ -153,5 +161,15 @@
 
   .misionStats {
     order: -1;
+  }
+}
+
+@media (max-width: 400px) {
+  .misionStats {
+    grid-template-columns: 1fr;
+  }
+
+  .statCard {
+    padding: var(--spacing-lg);
   }
 }

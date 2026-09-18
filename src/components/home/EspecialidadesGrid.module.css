@@ -20,6 +20,10 @@
   gap: var(--spacing-sm);
 }
 
+.grid > * {
+  min-width: 0;
+}
+
 .pill {
   display: flex;
   align-items: center;

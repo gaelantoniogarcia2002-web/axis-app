@@ -139,6 +139,10 @@
   gap: var(--spacing-lg);
 }
 
+.detalleGrid > * {
+  min-width: 0;
+}
+
 .detalleCard {
   background: var(--color-white);
   border: 1px solid var(--color-gray-200);
@@ -239,6 +243,10 @@
   grid-template-columns: 1fr 1fr;
   gap: var(--spacing-lg);
   align-items: start;
+}
+
+.extraGrid > * {
+  min-width: 0;
 }
 
 .faqCard {

@@ -32,6 +32,10 @@
   gap: var(--spacing-md);
 }
 
+.grid > * {
+  min-width: 0;
+}
+
 .card {
   display: flex;
   flex-direction: column;

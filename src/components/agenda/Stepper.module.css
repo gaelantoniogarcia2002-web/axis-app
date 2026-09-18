@@ -9,6 +9,7 @@
   display: flex;
   align-items: flex-start;
   flex: 1;
+  min-width: 0;
 }
 
 .linea {
@@ -26,7 +27,7 @@
   display: flex;
   align-items: flex-start;
   gap: var(--spacing-md);
-  flex-shrink: 0;
+  min-width: 0;
 }
 
 .circulo {
@@ -52,11 +53,16 @@
   color: var(--color-white);
 }
 
+.pasoTexto {
+  min-width: 0;
+}
+
 .pasoTitulo {
   font-size: 0.9375rem;
   font-weight: 700;
   color: var(--color-navy);
   margin-bottom: 2px;
+  overflow-wrap: break-word;
 }
 
 .pasoDesc {
@@ -71,6 +77,55 @@
   }
 
   .linea {
-    margin-top: 22px;
+    margin-top: 16px;
+  }
+
+  .circulo {
+    width: 32px;
+    height: 32px;
+    font-size: 0.875rem;
+  }
+
+  .paso {
+    gap: var(--spacing-sm);
+  }
+
+  .pasoTitulo {
+    font-size: 0.8125rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .stepper {
+    gap: 0;
+  }
+
+  .paso {
+    gap: 0;
+  }
+
+  /* En pantallas muy angostas, "Selecciona"/"Confirma"/"Asiste" no caben junto al
+     círculo sin desbordar. Se ocultan visualmente (no del DOM, para lectores de
+     pantalla) y se apoya en aria-label del círculo para transmitir el paso. */
+  .pasoTitulo {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .circulo {
+    width: 36px;
+    height: 36px;
+  }
+
+  .linea {
+    margin-top: 0;
+    align-self: center;
   }
 }

@@ -402,3 +402,52 @@ cuando existan las páginas de Agenda y Blog.
 del hospital, foto de equipo médico para el hero — se usan placeholders hasta que se suban
 a Drive. El número de WhatsApp/teléfono de call center también es un placeholder
 (`+52 55 5555-5555`) hasta que el cliente confirme el real.
+
+## 9. Revisión de responsive (móvil / tablet)
+
+Se probaron las 8 páginas del sitio en 320px, 375px y 768px de ancho con Playwright,
+comparando también contra el layout de escritorio (1440px) para confirmar que nada se rompió.
+
+**Bugs reales encontrados y corregidos:**
+
+- **Overflow horizontal en `/agenda-cita`** (el más grave, afectaba hasta 375px — un ancho
+  de celular común): el `Stepper` de 3 pasos usaba `flex-shrink: 0`, impidiendo que los
+  pasos se achicaran dentro del ancho disponible y empujando toda la página más ancha que
+  la pantalla. Se corrigió con `min-width: 0` en los ítems flex, círculos más pequeños en
+  móvil, y en pantallas muy angostas (≤400px) se oculta visualmente el texto del paso
+  ("Selecciona"/"Confirma"/"Asiste" no caben junto al círculo sin desbordar) dejando solo
+  los círculos numerados — un patrón común de stepper compacto. El texto no se quita del DOM:
+  se oculta con la técnica `sr-only` y se agrega `aria-label` al círculo, para no perder
+  accesibilidad para lectores de pantalla.
+- **Overflow horizontal en `/nosotros` a 320px** (página no tocada por las 5 fases, pero
+  detectada en esta revisión): la grilla de estadísticas (`misionStats`) no dejaba encoger
+  sus columnas por el bug clásico de CSS Grid/Flexbox donde los ítems tienen
+  `min-width: auto` por defecto. Se corrigió con `min-width: 0` en los ítems y un breakpoint
+  extra a 400px que pasa esa grilla a una sola columna.
+- **Correos largos sin punto de quiebre** (`coordinacion@badimedicalgroup.mx` en Contacto,
+  y el patrón se replicó preventivamente en Home): se agregó `overflow-wrap: break-word` a
+  los textos de contacto para que no fuercen el ancho de su contenedor.
+
+**Endurecimiento preventivo**: se agregó `min-width: 0` a los ítems de todas las grillas de
+2+ columnas creadas durante las 5 fases (Home: `DestacadosRow`, `MedicosDestacados`,
+`EspecialidadesGrid`, `Estadisticas`; `MedicoDetalle`: `detalleGrid`, `extraGrid`;
+`FormularioAgenda`/`FormularioContacto`: `.row`, `.resumen`), ya que es el mismo bug de CSS
+que causó el problema de Agenda tu cita — mejor prevenirlo ahí donde el patrón se repite que
+esperar a que aparezca en producción en un dispositivo angosto.
+
+**Nota sobre falsos positivos durante la revisión**: dos cosas que parecían bugs en las
+capturas de pantalla automatizadas NO lo eran, y no requirieron cambios de código:
+1. Un header duplicado a mitad de página en las capturas `fullPage` — es un artefacto
+   conocido de Playwright/Chromium al capturar página completa con elementos
+   `position: fixed` (se "pegan" de nuevo en cada tramo capturado). Confirmado con el DOM
+   (`document.querySelectorAll('header').length === 1`) y con una captura de un solo
+   viewport sin *stitching*, donde no hay superposición.
+2. Contenido que aparecía "vacío" (la barra de stats en Home, un paso completo en
+   `/modelo`): las animaciones `whileInView` de Framer Motion (fade-in al hacer scroll) no
+   llegan a dispararse cuando el scroll se simula muy rápido en automatización — con scroll
+   a velocidad humana normal (o el `fullPage` scrolleado más lento), el contenido aparece
+   correctamente. No afecta a usuarios reales.
+
+Verificado con un script que revisa `document.body.scrollWidth` contra el ancho del viewport
+en las 8 páginas × 3 anchos = 24 combinaciones: las 24 pasan sin overflow después de las
+correcciones.
