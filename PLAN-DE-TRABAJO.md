@@ -5,12 +5,18 @@
 
 ## 1. Contenido revisado en Drive
 
-La carpeta contiene únicamente:
+La carpeta contiene:
 
 - `TIPOGRAFÍAS/` — subcarpeta **vacía**, sin archivos cargados.
+- `LOGO/` — subcarpeta **vacía**, sin archivos cargados (aún no hay un archivo de logo
+  exportable, ej. SVG/PNG con fondo transparente).
+- `Mockups/` — **4 imágenes PNG** con el diseño de marca aplicado a piezas físicas
+  (gafete, tarjeta de presentación, llavero, empaque): `Mkp 3.png`, `Mkp 4.png`, `Mkp 5.png`,
+  `Mkp 6.png`. Confirman el naming de marca: **"bädi MEDICAL GROUP"**, tagline
+  **"SALUD QUE ACOMPAÑA"**. Ya descargadas a `src/assets/images/mockups/`.
 
-No hay imágenes, logos, fotos de médicos ni otros assets todavía en Drive. Este plan deja
-preparada la estructura del repo para recibirlos en cuanto se suban.
+Aún no hay fotos de médicos, imágenes hero, ni un archivo de logo aislado y reutilizable
+(favicon, header, etc.) — solo referencias visuales dentro de los mockups.
 
 ## 2. Estado actual del repo
 
@@ -57,13 +63,14 @@ archivos en cuanto se suban a Drive:
 ```
 src/assets/
 ├── images/
-│   ├── logo/       ← logo Badi Medical Group (variantes color/mono, SVG preferido)
-│   ├── hero/       ← imágenes hero por página (Home, Nosotros, etc.)
-│   ├── medicos/    ← fotos de perfil de cada médico
-│   └── general/    ← fotos institucionales, hospital, misceláneos
+│   ├── logo/       ← logo Badi Medical Group (variantes color/mono, SVG preferido) — PENDIENTE
+│   ├── hero/       ← imágenes hero por página (Home, Nosotros, etc.) — PENDIENTE
+│   ├── medicos/    ← fotos de perfil de cada médico — PENDIENTE
+│   ├── general/    ← fotos institucionales, hospital, misceláneos — PENDIENTE
+│   └── mockups/    ← ✅ Mkp 3-6.png (piezas de marca: gafete, tarjeta, llavero, empaque)
 └── fonts/          ← tipografías de la carpeta TIPOGRAFÍAS de Drive, si se decide self-host
                         en vez de usar Google Fonts (actualmente Playfair Display + Inter
-                        vía <link> en index.html)
+                        vía <link> en index.html) — PENDIENTE
 ```
 
 ## 5. Pasos siguientes (cuando Drive tenga contenido)
@@ -86,6 +93,12 @@ la rama `claude/drive-connection-2lkv44`, sin tocar `main` hasta validación del
 
 ## 7. Pendientes / bloqueos
 
-- Falta que se suban imágenes y tipografías reales a la carpeta de Drive.
-- Falta confirmar con el cliente: nombre a mostrar en header/footer, tagline, dominio de email
-  de contacto, y si la paleta de color actual (navy/gold) se conserva.
+- Falta un archivo de **logo** reutilizable (SVG/PNG transparente) — la carpeta `LOGO/` en
+  Drive sigue vacía; los mockups solo lo muestran aplicado a piezas físicas.
+- Falta que se suban fotos de médicos, imágenes hero y tipografías reales a Drive.
+- Naming de marca visible en los mockups: **"bädi MEDICAL GROUP"**, tagline
+  **"SALUD QUE ACOMPAÑA"** — falta confirmar con el cliente si este es el texto final para
+  header/footer/metadata, y el dominio de email de contacto definitivo.
+- Falta confirmar si la paleta de color actual del sitio (navy/gold) se conserva o cambia
+  con la nueva identidad (los mockups usan un estilo propio que conviene revisar antes de
+  tocar `globals.css`).
