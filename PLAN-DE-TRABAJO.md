@@ -337,6 +337,15 @@ exacto por muestreo de píxeles.
    - Ubicación usa un link de búsqueda de Google Maps por nombre del hospital (dato público
      real), no coordenadas o dirección inventadas.
 
+   **Actualización — texto lorem ipsum agregado a pedido del cliente** (solo para ver el
+   diseño con contenido, no son datos reales): `medicos.ts` ahora aplica un objeto
+   `LOREM_EXTRAS` (cédulas `0000000`, formación/curriculum/procedimientos en lorem ipsum,
+   12 años de experiencia, "+1,000" pacientes, horarios Lun/Mié/Vie) a los 29 médicos vía
+   `.map()`. `resenas.ts` genera 2 reseñas lorem ipsum por médico con autor explícitamente
+   genérico ("Paciente de ejemplo A/B") para que quede inequívoco que es contenido de
+   muestra y no un testimonio real. Reemplazar `LOREM_EXTRAS` y `RESENAS` por datos reales
+   cuando el cliente los proporcione.
+
    **Pendiente del cliente para completar esta fase de verdad**: cédulas profesionales,
    formación, años de experiencia, servicios/procedimientos y horarios de consulta reales
    por cada médico; reseñas de pacientes reales y verificadas (con su consentimiento).

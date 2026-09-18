@@ -1,6 +1,6 @@
 import type { Medico } from '../types';
 
-export const MEDICOS: Medico[] = [
+const MEDICOS_BASE: Medico[] = [
   // --- Cardiometabólico ---
   { id: 'm01', slug: 'victor-navarro-ceja', nombre: 'Víctor Hugo Navarro Ceja', especialidad: 'angiologia', capitulo: 'cardiometabolico', descripcion: 'Especialista en enfermedades vasculares periféricas y manejo de circulación.', hospital: 'Hospital Ángeles del Pedregal' },
   { id: 'm02', slug: 'manuel-ruiz-goytortua', nombre: 'Manuel Ruiz Goytortúa', especialidad: 'cardiologia', capitulo: 'cardiometabolico', descripcion: 'Atención integral del paciente cardiovascular con enfoque en prevención y tratamiento.', hospital: 'Hospital Ángeles del Pedregal' },
@@ -37,3 +37,31 @@ export const MEDICOS: Medico[] = [
   { id: 'm28', slug: 'karina-santana', nombre: 'Karina Santana', especialidad: 'reumatologia', capitulo: 'neuro-complementarias', descripcion: 'Manejo de enfermedades autoinmunes y del sistema musculoesquelético.', hospital: 'Hospital Ángeles del Pedregal' },
   { id: 'm29', slug: 'manuel-bustamante', nombre: 'Manuel Bustamante', especialidad: 'urologia', capitulo: 'neuro-complementarias', descripcion: 'Sistema urinario de hombres y mujeres, y sistema reproductor masculino.', hospital: 'Hospital Ángeles del Pedregal' },
 ];
+
+/**
+ * Texto de relleno (lorem ipsum) SOLO para visualizar cómo se ve el diseño del
+ * perfil de médico con estos campos llenos. No son datos reales — no fabricar
+ * cédulas, experiencia ni cifras reales de los médicos. Reemplazar por la
+ * información real de cada médico cuando el cliente la proporcione.
+ */
+const LOREM_EXTRAS: Pick<Medico, 'cedula' | 'cedulaEspecialidad' | 'curriculum' | 'formacion' | 'experienciaAnios' | 'pacientesAtendidos' | 'procedimientosDestacados' | 'horariosConsulta'> = {
+  cedula: '0000000',
+  cedulaEspecialidad: '0000000',
+  curriculum: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, ut enim ad minim veniam.',
+  formacion: ['Lorem ipsum – Facultad de Medicina', 'Dolor sit amet – Instituto de Especialidad'],
+  experienciaAnios: 12,
+  pacientesAtendidos: '+1,000',
+  procedimientosDestacados: [
+    'Lorem ipsum dolor sit amet',
+    'Consectetur adipiscing elit',
+    'Sed do eiusmod tempor incididunt',
+    'Ut labore et dolore magna aliqua',
+  ],
+  horariosConsulta: [
+    { dia: 'Lunes', horario: '9:00 – 14:00' },
+    { dia: 'Miércoles', horario: '16:00 – 20:00' },
+    { dia: 'Viernes', horario: '9:00 – 14:00' },
+  ],
+};
+
+export const MEDICOS: Medico[] = MEDICOS_BASE.map(m => ({ ...m, ...LOREM_EXTRAS }));
