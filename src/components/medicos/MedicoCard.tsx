@@ -42,7 +42,7 @@ export default function MedicoCard({ medico }: MedicoCardProps) {
         <Button href={`/medicos/${medico.slug}`} variant="ghost" className={styles.actionBtn}>
           Ver perfil
         </Button>
-        <Button href="/contacto" variant="primary" className={styles.actionBtn}>
+        <Button href="/agenda-cita" variant="primary" className={styles.actionBtn}>
           <FontAwesomeIcon icon={faCalendarCheck} /> Agendar
         </Button>
       </div>

@@ -352,8 +352,26 @@ exacto por muestreo de píxeles.
 
    Se eliminó `Badge.tsx`/`Badge.module.css` (sin uso tras quitar el badge de capítulo de
    `MedicoCard` en la Fase 2 y de `MedicoDetalle` en esta fase).
-4. **Fase 4 — Agenda tu cita**: página y flujo nuevos (formulario, sin backend real todavía
-   — solo UI, el envío requiere definir a dónde llega la cita)
+4. **✅ Fase 4 — Agenda tu cita** (implementada): página nueva en `/agenda-cita` con flujo
+   real de 3 pasos (no solo visual): `Stepper` (Selecciona/Confirma/Asiste con checkmarks en
+   pasos completados) + `FormularioAgenda` con react-hook-form + zod (mismo patrón que
+   `FormularioContacto`), siguiendo la estructura del mockup: especialidad → médico (filtrado
+   dinámicamente por la especialidad elegida) → fecha/hora → modalidad/hospital (hospital fijo,
+   de solo lectura, ya que solo hay una sede) → datos del paciente → aseguradora/póliza
+   (opcionales) → motivo con contador de caracteres 0/500. Paso 2 muestra un resumen de los
+   datos capturados con opción de "Editar datos" o "Confirmar cita"; paso 3 es la pantalla de
+   éxito. Se agregó "Agenda tu cita" a `NAV_LINKS` y todos los botones "Agenda tu cita" /
+   "Agendar" del sitio (Header, Hero, MedicoCard, perfil de médico, Modelo) ahora apuntan a
+   `/agenda-cita` en vez de `/contacto`. Sidebar con tarjetas de WhatsApp, horarios y
+   ubicación, igual que en las demás páginas ya rediseñadas.
+
+   **Envío sin backend real** (como ya pasaba con `FormularioContacto`): si no hay variables
+   de entorno de Supabase configuradas, el "envío" simula un delay y avanza al paso 3 sin
+   mandar los datos a ningún lado. La pantalla de éxito lo dice explícitamente ("esta demo
+   aún no está conectada a un sistema de citas real") para no dar una falsa sensación de que
+   la cita quedó registrada en un sistema real. Falta definir con el cliente a dónde debe
+   llegar esta información (¿tabla de Supabase?, ¿correo?, ¿integración con su sistema de
+   citas actual?) antes de lanzar esto a producción.
 5. **Fase 5 — Contacto**: rediseño grande con canales múltiples y WhatsApp
 
 **Pendiente de decidir para fases siguientes**: la navegación del mockup es

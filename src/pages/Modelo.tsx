@@ -124,7 +124,7 @@ export default function Modelo() {
             centered
           />
           <div className={styles.ctaActions}>
-            <Button href="/contacto" variant="primary">Agendar consulta</Button>
+            <Button href="/agenda-cita" variant="primary">Agendar consulta</Button>
             <Button href="/medicos" variant="ghost">Conocer especialistas</Button>
           </div>
         </div>

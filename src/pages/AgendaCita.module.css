@@ -1,0 +1,128 @@
+.hero {
+  position: relative;
+  background: linear-gradient(135deg, var(--color-blue) 0%, var(--color-navy) 100%);
+  padding: calc(var(--header-height) + var(--spacing-2xl)) 0 var(--spacing-2xl);
+  overflow: hidden;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 80% 20%, rgba(255,255,255,0.12) 0%, transparent 50%);
+}
+
+.heroInner {
+  position: relative;
+  z-index: 1;
+}
+
+.heroIcon {
+  font-size: 1.75rem;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: var(--spacing-md);
+}
+
+.title {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 5vw, 2.75rem);
+  font-weight: 700;
+  color: var(--color-white);
+  margin-bottom: var(--spacing-md);
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.85);
+  max-width: 500px;
+}
+
+.content {
+  padding: var(--spacing-2xl) 0 var(--spacing-3xl);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: var(--spacing-xl);
+  align-items: start;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  position: sticky;
+  top: calc(var(--header-height) + var(--spacing-lg));
+}
+
+.whatsappCard {
+  background: rgba(37, 211, 102, 0.08);
+  border: 1px solid rgba(37, 211, 102, 0.25);
+  border-radius: var(--radius-card);
+  padding: var(--spacing-lg);
+}
+
+.whatsappIcon {
+  font-size: 1.5rem;
+  color: var(--color-whatsapp);
+  margin-bottom: var(--spacing-sm);
+}
+
+.whatsappBtn {
+  width: 100%;
+  margin-top: var(--spacing-md);
+  justify-content: center;
+}
+
+.infoCard {
+  background: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-card);
+  padding: var(--spacing-lg);
+}
+
+.cardTitle {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-navy);
+  margin-bottom: var(--spacing-sm);
+}
+
+.cardTitle svg {
+  color: var(--color-blue);
+  font-size: 0.9375rem;
+}
+
+.cardDesc {
+  font-size: 0.875rem;
+  color: var(--color-gray-600);
+  line-height: 1.6;
+}
+
+.cardNota {
+  font-size: 0.8125rem;
+  color: var(--color-gray-400);
+  margin-top: var(--spacing-sm);
+}
+
+.mapLink {
+  display: inline-block;
+  margin-top: var(--spacing-sm);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-blue);
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    position: static;
+  }
+}

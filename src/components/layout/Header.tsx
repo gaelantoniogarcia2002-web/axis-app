@@ -18,7 +18,7 @@ export default function Header() {
         <Navigation mobile={false} />
 
         <div className={styles.actions}>
-          <Button href="/contacto" variant="primary">Agenda tu cita</Button>
+          <Button href="/agenda-cita" variant="primary">Agenda tu cita</Button>
           <button
             className={styles.menuToggle}
             onClick={() => setMenuOpen(!menuOpen)}
@@ -35,7 +35,7 @@ export default function Header() {
         <div className={styles.mobileMenu}>
           <Navigation mobile={true} onClose={() => setMenuOpen(false)} />
           <div className={styles.mobileActions}>
-            <Button href="/contacto" variant="primary">Agenda tu cita</Button>
+            <Button href="/agenda-cita" variant="primary">Agenda tu cita</Button>
           </div>
         </div>
       )}

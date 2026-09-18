@@ -28,7 +28,7 @@ export default function Hero() {
             27 especialistas titulares. 15 especialidades. Una red coordinada para la atención médica más exigente.
           </p>
           <div className={styles.actions}>
-            <Button href="/contacto" variant="primary">Agenda tu cita</Button>
+            <Button href="/agenda-cita" variant="primary">Agenda tu cita</Button>
             <Button href="https://wa.me/525555555555" variant="whatsapp">
               <FontAwesomeIcon icon={faWhatsapp} /> Escríbenos por WhatsApp
             </Button>

@@ -21,5 +21,6 @@ export const NAV_LINKS = [
   { label: 'Médicos', href: '/medicos' },
   { label: 'Modelo bädi', href: '/modelo' },
   { label: 'Nosotros', href: '/nosotros' },
+  { label: 'Agenda tu cita', href: '/agenda-cita' },
   { label: 'Contacto', href: '/contacto' },
 ] as const;

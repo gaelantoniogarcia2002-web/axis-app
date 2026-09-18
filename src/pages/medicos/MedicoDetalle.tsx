@@ -96,7 +96,7 @@ export default function MedicoDetalle() {
             )}
 
             <div className={styles.cta}>
-              <Button href="/contacto" variant="primary">
+              <Button href="/agenda-cita" variant="primary">
                 <FontAwesomeIcon icon={faCalendarCheck} /> Agenda tu cita
               </Button>
               <Button href="https://wa.me/525555555555" variant="whatsapp">

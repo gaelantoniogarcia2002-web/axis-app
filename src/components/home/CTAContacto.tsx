@@ -19,7 +19,7 @@ export default function CTAContacto() {
             Cuéntanos sobre tus necesidades y te conectaremos con el especialista de la red bädi más adecuado para tu caso.
           </p>
           <div className={styles.actions}>
-            <Button href="/contacto" variant="primary">Agendar consulta</Button>
+            <Button href="/agenda-cita" variant="primary">Agendar consulta</Button>
             <Button href="/medicos" variant="outline">Conocer médicos</Button>
           </div>
         </motion.div>

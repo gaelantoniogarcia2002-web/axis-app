@@ -7,6 +7,7 @@ import Medicos from './pages/Medicos';
 import MedicoDetalle from './pages/medicos/MedicoDetalle';
 import Modelo from './pages/Modelo';
 import Contacto from './pages/Contacto';
+import AgendaCita from './pages/AgendaCita';
 
 export const router = createBrowserRouter([
   {
@@ -20,6 +21,7 @@ export const router = createBrowserRouter([
       { path: 'medicos/:slug', element: <MedicoDetalle /> },
       { path: 'modelo', element: <Modelo /> },
       { path: 'contacto', element: <Contacto /> },
+      { path: 'agenda-cita', element: <AgendaCita /> },
     ],
   },
 ]);
