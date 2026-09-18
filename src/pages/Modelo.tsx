@@ -25,7 +25,7 @@ const PASOS = [
     icon: faRoute,
     titulo: 'Diseño',
     subtitulo: 'Ruta clínica personalizada',
-    desc: 'Con base en el perfil del paciente, diseñamos una ruta clínica que integra los especialistas más adecuados de la red AXIS, con protocolos coordinados y tiempos optimizados.',
+    desc: 'Con base en el perfil del paciente, diseñamos una ruta clínica que integra los especialistas más adecuados de la red bädi, con protocolos coordinados y tiempos optimizados.',
     puntos: [
       'Selección del especialista idóneo',
       'Diseño de protocolo de atención',
@@ -38,8 +38,8 @@ const PASOS = [
     num: '03',
     icon: faBolt,
     titulo: 'Activación',
-    subtitulo: 'Coordinación con red AXIS',
-    desc: 'Ponemos en marcha la ruta clínica. Los especialistas de AXIS se coordinan entre sí para asegurar que el paciente reciba atención integral, oportuna y sin fricciones.',
+    subtitulo: 'Coordinación con red bädi',
+    desc: 'Ponemos en marcha la ruta clínica. Los especialistas de bädi se coordinan entre sí para asegurar que el paciente reciba atención integral, oportuna y sin fricciones.',
     puntos: [
       'Primer contacto con el especialista',
       'Seguimiento entre especialistas en red',
@@ -56,7 +56,7 @@ export default function Modelo() {
       <section className={styles.hero}>
         <div className="container">
           <p className={styles.eyebrow}>Cómo funciona</p>
-          <h1 className={styles.title}>El modelo AXIS</h1>
+          <h1 className={styles.title}>El modelo bädi</h1>
           <p className={styles.subtitle}>
             Un proceso de 3 pasos diseñado para conectar a los pacientes con el especialista correcto, en el momento adecuado, sin fricción.
           </p>
@@ -119,7 +119,7 @@ export default function Modelo() {
         <div className="container">
           <SectionTitle
             eyebrow="¿Listo para comenzar?"
-            title="Inicia tu proceso con AXIS"
+            title="Inicia tu proceso con bädi"
             subtitle="Cuéntanos tu caso y te conectamos con el especialista adecuado."
             centered
           />

@@ -1,6 +1,6 @@
 import Hero from '../components/home/Hero';
 import Estadisticas from '../components/home/Estadisticas';
-import QueSesAxis from '../components/home/QueSesAxis';
+import QueEsBadi from '../components/home/QueEsBadi';
 import EspecialidadesDestacadas from '../components/home/EspecialidadesDestacadas';
 import CTAContacto from '../components/home/CTAContacto';
 
@@ -9,7 +9,7 @@ export default function Home() {
     <main>
       <Hero />
       <Estadisticas />
-      <QueSesAxis />
+      <QueEsBadi />
       <EspecialidadesDestacadas />
       <CTAContacto />
     </main>

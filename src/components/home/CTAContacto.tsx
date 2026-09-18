@@ -16,7 +16,7 @@ export default function CTAContacto() {
           <p className={styles.eyebrow}>¿Necesitas atención especializada?</p>
           <h2 className={styles.title}>Estamos listos para orientarte</h2>
           <p className={styles.desc}>
-            Cuéntanos sobre tus necesidades y te conectaremos con el especialista de la red AXIS más adecuado para tu caso.
+            Cuéntanos sobre tus necesidades y te conectaremos con el especialista de la red bädi más adecuado para tu caso.
           </p>
           <div className={styles.actions}>
             <Button href="/contacto" variant="primary">Agendar consulta</Button>

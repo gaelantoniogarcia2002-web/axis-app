@@ -18,7 +18,7 @@ export default function Contacto() {
           <p className={styles.eyebrow}>Contáctanos</p>
           <h1 className={styles.title}>Estamos para orientarte</h1>
           <p className={styles.subtitle}>
-            Cuéntanos tu caso y te conectaremos con el especialista más adecuado de la red AXIS.
+            Cuéntanos tu caso y te conectaremos con el especialista más adecuado de la red bädi.
           </p>
         </div>
       </section>

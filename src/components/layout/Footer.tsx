@@ -12,11 +12,11 @@ export default function Footer() {
       <div className={`container ${styles.grid}`}>
         <div className={styles.brand}>
           <div className={styles.logo}>
-            <span className={styles.logoText}>AXIS</span>
-            <span className={styles.logoSub}>Red Médica de Alta Especialidad</span>
+            <span className={styles.logoText}>{SITE_CONFIG.nombre}</span>
+            <span className={styles.logoSub}>Medical Group</span>
           </div>
           <p className={styles.tagline}>
-            Red cerrada de especialistas de alta prescripción con sede en {SITE_CONFIG.hospital}.
+            {SITE_CONFIG.tagline}. Red cerrada de especialistas de alta prescripción con sede en {SITE_CONFIG.hospital}.
           </p>
         </div>
 
@@ -40,7 +40,7 @@ export default function Footer() {
             </li>
             <li>
               <FontAwesomeIcon icon={faEnvelope} className={styles.icon} />
-              <a href="mailto:contacto@axisredmedica.mx" className={styles.link}>contacto@axisredmedica.mx</a>
+              <a href="mailto:contacto@badimedicalgroup.mx" className={styles.link}>contacto@badimedicalgroup.mx</a>
             </li>
             <li>
               <FontAwesomeIcon icon={faPhone} className={styles.icon} />
@@ -51,7 +51,7 @@ export default function Footer() {
       </div>
 
       <div className={`container ${styles.bottom}`}>
-        <p className={styles.copy}>© {year} AXIS Red Médica. Todos los derechos reservados.</p>
+        <p className={styles.copy}>© {year} {SITE_CONFIG.nombreCompleto}. Todos los derechos reservados.</p>
         <p className={styles.vumi}>Propuesta exclusiva para <strong>VUMI Group</strong></p>
       </div>
     </footer>

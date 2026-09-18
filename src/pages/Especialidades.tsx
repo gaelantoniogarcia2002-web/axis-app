@@ -20,7 +20,7 @@ export default function Especialidades() {
     <main>
       <section className={styles.hero}>
         <div className="container">
-          <p className={styles.eyebrow}>Red AXIS</p>
+          <p className={styles.eyebrow}>Red bädi</p>
           <h1 className={styles.title}>Especialidades médicas</h1>
           <p className={styles.subtitle}>
             15 especialidades organizadas en 6 capítulos clínicos para una atención integral y coordinada.

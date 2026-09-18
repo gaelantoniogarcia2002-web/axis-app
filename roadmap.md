@@ -1,3 +1,10 @@
+> ⚠️ **Documento histórico.** Este roadmap corresponde a la propuesta original bajo el
+> nombre "AXIS" y a un stack basado en Next.js que no se implementó (el sitio real usa
+> React + Vite). El proyecto se rebrandeó a **bädi Medical Group**. Para el estado actual,
+> los assets de marca y el checklist de implementación vigente, ver
+> [`PLAN-DE-TRABAJO.md`](./PLAN-DE-TRABAJO.md). Se conserva este archivo como referencia
+> histórica de la visión de producto original.
+
 # AXIS — Roadmap v0.1
 > Red Cerrada de Especialistas Médicos de Alta Prescripción  
 > Sitio web institucional · propuesta exclusiva para VUMI Group

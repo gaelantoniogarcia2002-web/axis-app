@@ -97,30 +97,38 @@ Confirmado con el usuario: **es el mismo proyecto**, solo cambia de marca de "AX
 
 ## 3. Checklist de rebranding (texto y metadata)
 
-Puntos exactos en el código donde aparece "AXIS" y deben actualizarse. El naming
-("bädi Medical Group", tagline "SALUD QUE ACOMPAÑA") y la paleta de color primaria
-(`#0270FD` / `#002C83`) ya están confirmados por el Manual de Marca; lo que falta es el
-archivo de logo aislado y aplicar los cambios en el código:
+**✅ Implementado** (ver commit de implementación). El naming, la paleta y las tipografías
+ya están aplicados en el código:
 
-- [ ] `src/data/config.ts` — `nombre`, `nombreCompleto`, `descripcion`, `keywords`, label
-      "Modelo AXIS" en `NAV_LINKS`
-- [ ] `index.html` — `<title>`, `<meta name="description">`
-- [ ] `src/components/layout/Header.tsx:21` — logo de texto "AXIS"
-- [ ] `src/components/layout/Footer.tsx:15,43,54` — logo de texto, email de contacto
-      (`contacto@axisredmedica.mx` → nuevo dominio), copyright
-- [ ] `src/components/home/QueSesAxis.tsx` — renombrar componente (`QueEsBadi.tsx`) y copy
-      "¿Qué es AXIS?"
-- [ ] `roadmap.md` — actualizar o archivar como referencia histórica del naming anterior
-- [ ] `src/styles/globals.css` — reemplazar tipografías `Playfair Display` + `Inter` (Google
-      Fonts vía `<link>`) por `@font-face` self-hosted con **Batica Sans**
-      (`src/assets/fonts/BaticaSans-Regular.otf`, para títulos/marca) y **Myriad Pro**
-      (`src/assets/fonts/MyriadPro-Regular.ttf`, para cuerpo de texto). Solo hay peso
-      "Regular" de cada una — si se necesitan bold/italic hay que pedirlos.
-- [ ] `index.html` — quitar los `<link>` de Google Fonts (Playfair Display/Inter) ya que se
-      pasa a fuentes self-hosted
-- [ ] `src/styles/globals.css` — actualizar `--color-navy` → `#002C83` y agregar
-      `--color-blue-primary: #0270FD` (o reemplazar el rol de `--color-gold` según se defina
-      el uso de acentos); revisar todos los componentes que referencian estos tokens
+- [x] `src/data/config.ts` — `nombre: 'bädi'`, `nombreCompleto: 'bädi Medical Group'`,
+      `tagline: 'SALUD QUE ACOMPAÑA'`, `keywords`, label "Modelo bädi" en `NAV_LINKS`
+- [x] `index.html` — `<title>`, quitados los `<link>` de Google Fonts (Playfair/Inter)
+- [x] `src/components/layout/Header.tsx` — logo real (`logo-horizontal-trim.png`) en vez de
+      texto, dentro de una tarjeta blanca (el JPG no tiene fondo transparente)
+- [x] `src/components/layout/Footer.tsx` — wordmark "bädi" / "MEDICAL GROUP" con la fuente
+      real, tagline, email (`contacto@badimedicalgroup.mx`), copyright dinámico desde
+      `SITE_CONFIG`
+- [x] `src/components/home/QueSesAxis.tsx` → renombrado a `QueEsBadi.tsx`
+      (+ `QueEsBadi.module.css`), copy "¿Qué es bädi?", import actualizado en `Home.tsx`
+- [x] `roadmap.md` — marcado como documento histórico, con referencia a este plan
+- [x] `src/styles/globals.css` — `@font-face` self-hosted con **Batica Sans**
+      (`src/assets/fonts/BaticaSans-Regular.otf`, asignada a `--font-serif`, usada para
+      marca/títulos) y **Myriad Pro** (`src/assets/fonts/MyriadPro-Regular.ttf`, asignada a
+      `--font-sans`, cuerpo de texto). Se mantuvieron los nombres de variable existentes
+      para no tocar los 23 módulos CSS que ya las referencian. Solo hay peso "Regular" de
+      cada una — si se necesitan bold/italic hay que pedirlos.
+- [x] `src/styles/globals.css` — `--color-navy` → `#002C83`, nueva `--color-blue: #0270FD`
+      y contextuales `--color-urgencias: #DC2626` / `--color-prevencion: #16A34A`.
+      `--color-gold` se conserva para acentos premium (eyebrows, footer)
+- [x] `src/components/ui/Button.module.css` — el botón primario (CTA) pasó de gold/navy a
+      `--color-blue`/blanco, ya que el azul es el color primario de marca y el gold queda
+      reservado para acentos premium/eventos según el manual
+- [x] Reemplazadas todas las menciones de "AXIS" en el copy de las páginas
+      (Nosotros, Modelo, Especialidades, Medicos, Contacto, CTAContacto,
+      FormularioContacto) por "bädi" / "bädi Medical Group"
+- [x] Logos recortados (whitespace trim con Pillow) a
+      `src/assets/images/logo/*-trim.png` para uso en UI — los originales sin recortar se
+      conservan como fuente
 
 ## 4. Estructura de `/src/assets` preparada
 
@@ -171,16 +179,24 @@ Ya resueltos gracias al Manual de Marca y a la confirmación directa del cliente
 - ✅ Las 4 variantes del logo descargadas (vertical, horizontal, isotipo, solo texto), todas
   sobre fondo blanco. Confirmado con el cliente: no existe variante negativa.
 - ✅ 4 imágenes de `Patrones/` descargadas (`src/assets/images/patrones/`).
+- ✅ Implementación en código: colores, tipografías, logo, textos (ver sección 3).
 
 Lo que sigue pendiente:
 
-- El logo solo existe en JPG con fondo blanco — para usarlo sobre el footer navy oscuro
-  actual conviene recortar/usar `logo-isotipo.jpg` o `logo-texto.jpg` con tratamiento, o pedir
-  un PNG transparente si el resultado visual no convence.
+- El logo solo existe en JPG con fondo blanco. En el Header se resolvió mostrándolo dentro
+  de una tarjeta blanca redondeada; en el Footer (navy oscuro) se optó por no usar la imagen
+  y mantener el wordmark como texto con la tipografía real, para evitar un recuadro blanco
+  sobre fondo oscuro. Si se consigue una versión PNG transparente/negativa más adelante,
+  se puede reemplazar el wordmark de texto del footer por la imagen real.
 - Solo hay peso "Regular" de Batica Sans y Myriad Pro — si el diseño final pide bold/italic
-  para títulos, hay que pedirlos.
+  para títulos, hay que pedirlos (actualmente `font-weight: 700` en títulos usa el navegador
+  sintetizando el bold a partir del Regular, no es un peso real de la fuente).
 - Falta que se suban fotos de médicos e imágenes hero a Drive (no hay ninguna todavía en
-  ninguna carpeta ni en el manual).
-- Falta confirmar el dominio de email de contacto definitivo (hoy `contacto@axisredmedica.mx`).
+  ninguna carpeta ni en el manual) — los placeholders (`hero.png`, `AvatarPlaceholder.tsx`)
+  siguen en uso.
+- Dominio de email de contacto: se usó `contacto@badimedicalgroup.mx` como valor razonable
+  a falta de uno confirmado explícitamente — verificar con el cliente que sea el correcto.
+- `favicon.svg` sigue siendo el ícono original de AXIS — no se actualizó porque no hay una
+  versión vectorial (SVG) del isotipo de bädi, solo JPG rasterizado.
 - Colores contextuales (rojo urgencias, verde prevención, dorado eventos) sin código exacto
   — de baja prioridad, son de uso situacional y no bloquean el rebranding base del sitio.

@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Navigation from './Navigation';
 import Button from '../ui/Button';
+import logoHorizontal from '../../assets/images/logo/logo-horizontal-trim.png';
 import styles from './Header.module.css';
 
 export default function Header() {
@@ -18,8 +19,7 @@ export default function Header() {
     <header className={[styles.header, scrolled && styles.scrolled].filter(Boolean).join(' ')}>
       <div className={`container ${styles.inner}`}>
         <Link to="/" className={styles.logo}>
-          <span className={styles.logoText}>AXIS</span>
-          <span className={styles.logoSub}>Red Médica</span>
+          <img src={logoHorizontal} alt="bädi Medical Group" className={styles.logoImg} />
         </Link>
 
         <Navigation mobile={false} />

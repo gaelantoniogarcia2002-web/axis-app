@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShieldHalved, faUserDoctor, faNetworkWired } from '@fortawesome/free-solid-svg-icons';
 import SectionTitle from '../ui/SectionTitle';
-import styles from './QueSesAxis.module.css';
+import styles from './QueEsBadi.module.css';
 
 const PILARES = [
   {
@@ -22,12 +22,12 @@ const PILARES = [
   },
 ];
 
-export default function QueSesAxis() {
+export default function QueEsBadi() {
   return (
     <section className={styles.section}>
       <div className="container">
         <SectionTitle
-          eyebrow="¿Qué es AXIS?"
+          eyebrow="¿Qué es bädi?"
           title="Una red médica diferente"
           subtitle="No somos un directorio. Somos una red cerrada de especialistas que se conocen, colaboran y se respaldan mutuamente para ofrecerte la mejor atención posible."
           centered

@@ -22,7 +22,7 @@ export default function Medicos() {
     <main>
       <section className={styles.hero}>
         <div className="container">
-          <p className={styles.eyebrow}>Red AXIS</p>
+          <p className={styles.eyebrow}>Red bädi</p>
           <h1 className={styles.title}>Nuestros especialistas</h1>
           <p className={styles.subtitle}>
             27 médicos especialistas titulares con sede en Hospital Ángeles del Pedregal.

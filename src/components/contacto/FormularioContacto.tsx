@@ -62,7 +62,7 @@ export default function FormularioContacto() {
         <div className={styles.successIcon}>✓</div>
         <h3 className={styles.successTitle}>¡Mensaje enviado!</h3>
         <p className={styles.successDesc}>
-          Gracias por contactarnos. Un miembro del equipo AXIS se comunicará contigo a la brevedad.
+          Gracias por contactarnos. Un miembro del equipo bädi se comunicará contigo a la brevedad.
         </p>
         <Button onClick={() => setEnviado(false)} variant="ghost">Enviar otro mensaje</Button>
       </div>

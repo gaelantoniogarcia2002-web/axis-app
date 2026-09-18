@@ -1,8 +1,27 @@
+@font-face {
+  font-family: 'Batica Sans';
+  src: url('../assets/fonts/BaticaSans-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Myriad Pro';
+  src: url('../assets/fonts/MyriadPro-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
-  --color-navy:       #102B46;
-  --color-navy-80:    rgba(16, 43, 70, 0.8);
-  --color-navy-60:    rgba(16, 43, 70, 0.6);
-  --color-navy-10:    rgba(16, 43, 70, 0.06);
+  /* bädi Medical Group — paleta oficial del Manual de Marca */
+  --color-navy:       #002C83;
+  --color-navy-80:    rgba(0, 44, 131, 0.8);
+  --color-navy-60:    rgba(0, 44, 131, 0.6);
+  --color-navy-10:    rgba(0, 44, 131, 0.06);
+  --color-blue:        #0270FD;
+  --color-blue-light:  #4A9AFF;
   --color-gold:       #C9A84C;
   --color-gold-light: #E8D5A3;
   --color-gold-dark:  #A8882E;
@@ -14,8 +33,14 @@
   --color-gray-600:   #6C757D;
   --color-gray-900:   #212529;
 
-  --font-serif: 'Playfair Display', Georgia, serif;
-  --font-sans:  'Inter', system-ui, sans-serif;
+  /* colores contextuales (uso situacional, no colores base del sitio) */
+  --color-urgencias:  #DC2626;
+  --color-prevencion: #16A34A;
+
+  /* --font-serif se mantiene por compatibilidad con los módulos CSS existentes;
+     apunta a Batica Sans (marca/títulos), que en realidad es sans-serif */
+  --font-serif: 'Batica Sans', Georgia, serif;
+  --font-sans:  'Myriad Pro', system-ui, sans-serif;
 
   --spacing-xs:  4px;
   --spacing-sm:  8px;
