@@ -3,7 +3,7 @@ import styles from './AvatarPlaceholder.module.css';
 
 interface AvatarPlaceholderProps {
   nombre: string;
-  size?: 'xs' | 'sm' | 'md' | 'lg';
+  size?: 'xs' | 'sm' | 'md' | 'lg' | 'full';
   foto?: string;
 }
 

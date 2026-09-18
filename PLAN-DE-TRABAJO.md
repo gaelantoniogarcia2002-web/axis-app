@@ -293,9 +293,20 @@ exacto por muestreo de píxeles.
    (reemplazados por los nuevos componentes de Home, sin uso en otras páginas). Verificado
    que Nosotros/Médicos/etc. no se rompieron con el nuevo Header (siguen usando
    `position: fixed` + el mismo `--header-height`, solo cambió a blanco permanente).
-2. **Fase 2 — Especialistas**: buscador + filtros + grid de tarjetas sobre `Medicos.tsx`
-   (ya existe un buscador + 2 selects de filtro; falta el estilo de pills y las tarjetas con
-   botón "Agendar")
+2. **✅ Fase 2 — Especialistas** (implementada): `Medicos.tsx` con hero claro + mini-stats
+   inline, `FiltrosMedicos` rediseñado (buscador de ancho completo + pills de especialidad
+   con "Más filtros" que revela los selects de capítulo/especialidad completos), `MedicoCard`
+   rediseñado (foto grande, botón de favorito ❤ con estado local sin persistencia, botones
+   "Ver perfil" + "Agendar" separados del área clicable de la tarjeta), banner "¿Prefieres
+   agendar por WhatsApp?" al final del listado. Se agregaron los tamaños `xs`/`full` a
+   `AvatarPlaceholder` y la variante `whatsapp` de `Button` ya creada en la Fase 1 se
+   reutilizó aquí.
+   **Bug encontrado y corregido durante la verificación visual**: el pill activo de
+   especialidad quedaba con texto invisible (mismo color que el fondo) cuando además estaba
+   en `:hover` — `.pill:hover` (dos clases, mayor especificidad) le ganaba el color de texto
+   a `.pillActive` (una clase). Se corrigió agregando `.pillActive:hover` explícito. Este es
+   exactamente el estado en el que queda el pill justo después de que un usuario le hace
+   clic, así que era un bug real, no solo un artefacto de la captura de pantalla.
 3. **Fase 3 — Perfil de médico**: rediseño de `MedicoDetalle.tsx` + modelos de datos
    `reviews.ts`/`faq.ts`/`articulos.ts`
 4. **Fase 4 — Agenda tu cita**: página y flujo nuevos (formulario, sin backend real todavía
