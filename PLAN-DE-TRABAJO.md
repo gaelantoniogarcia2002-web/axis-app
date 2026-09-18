@@ -48,12 +48,21 @@ confirmados oficialmente por el manual:
   documentos corporativos monocromáticos, uso general en sitio web/redes), positivo y
   negativo, usos incorrectos. El archivo aislado (SVG/PNG) sigue sin existir en Drive
   (`LOGO/` vacía) — pendiente que el cliente lo suba.
-- **Paleta de colores** (confirmada por el cliente a partir del manual):
+- **Paleta de colores** (confirmada por el cliente a partir del manual, y verificada contra
+  el logo real):
   - Azul primario: `#0270FD`
   - Azul oscuro/secundario: `#002C83`
-  - Colores contextuales por aplicación: rojo (urgencias), verde (prevención/bienestar),
-    dorado (eventos/certificaciones premium) — sin código exacto todavía, son de uso
-    situacional, no colores base del sitio.
+  - Colores contextuales por aplicación (elegidos por Claude, ya que el manual no da el
+    código exacto — son de uso situacional, no colores base del sitio):
+    - Rojo urgencias: `#DC2626`
+    - Verde prevención/bienestar: `#16A34A`
+    - Dorado eventos/premium: `#C9A84C` (se reutiliza el gold que ya usaba el sitio AXIS,
+      porque el manual describe el mismo uso — eventos, reconocimientos, comunicación premium)
+- **Logo**: ya se descargó `LOGO.jpg` (4500×4500, fondo blanco) a
+  `src/assets/images/logo/logo.jpg`. Es un JPG sobre fondo blanco, no una versión
+  transparente/negativa — sirve para usos sobre fondo claro (favicon, header claro), pero
+  para el footer oscuro o aplicaciones en negativo haría falta pedir la variante correspondiente
+  (el manual menciona explícitamente "positivo y negativo" como parte de las variantes).
 
 ## 2. Estado actual del repo
 
@@ -110,6 +119,7 @@ src/assets/
 │   ├── hero/       ← imágenes hero por página (Home, Nosotros, etc.) — PENDIENTE
 │   ├── medicos/    ← fotos de perfil de cada médico — PENDIENTE
 │   ├── general/    ← fotos institucionales, hospital, misceláneos — PENDIENTE
+│   ├── logo/       ← ✅ logo.jpg (4500×4500, fondo blanco — falta variante negativa/transparente)
 │   ├── mockups/    ← ✅ Mkp 3-6.png (piezas de marca: gafete, tarjeta, llavero, empaque)
 │   └── patrones/   ← patrones/texturas de marca (Patrones/ en Drive) — PENDIENTE de descargar
 └── fonts/          ← archivos de "Batica Sans" (tipografía oficial según Manual de Marca),
@@ -140,14 +150,15 @@ Ya resueltos gracias al Manual de Marca y a la confirmación directa del cliente
 
 - ✅ Naming y tono de marca: **"bädi Medical Group"**, tagline **"SALUD QUE ACOMPAÑA"**,
   misión/visión/valores.
-- ✅ Paleta de color primaria: `#0270FD` (azul primario) y `#002C83` (azul oscuro/secundario).
+- ✅ Paleta de color primaria: `#0270FD` (azul primario) y `#002C83` (azul oscuro/secundario);
+  contextuales elegidas: `#DC2626` urgencias, `#16A34A` prevención, `#C9A84C` eventos.
 - ✅ Tipografía oficial: **Batica Sans**.
+- ✅ Logo principal descargado (`src/assets/images/logo/logo.jpg`, fondo blanco).
 
 Lo que sigue pendiente:
 
-- Falta un archivo de **logo** reutilizable (SVG/PNG transparente, con sus variantes
-  isotipo/logotipo/imagotipo) — la carpeta `LOGO/` en Drive sigue vacía; el manual y los
-  mockups solo lo muestran aplicado a piezas, no como archivo aislado.
+- Falta la **variante negativa/transparente del logo** (para footer oscuro y aplicaciones en
+  negativo) — solo tenemos la versión sobre fondo blanco.
 - Falta descargar los 4 archivos de `Patrones/` al repo (`src/assets/images/patrones/`).
 - Faltan los archivos de fuente de **Batica Sans** — `TIPOGRAFÍAS/` en Drive sigue vacía.
 - Falta que se suban fotos de médicos e imágenes hero a Drive (no hay ninguna todavía en
