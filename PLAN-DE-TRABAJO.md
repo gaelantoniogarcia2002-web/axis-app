@@ -307,8 +307,42 @@ exacto por muestreo de píxeles.
    a `.pillActive` (una clase). Se corrigió agregando `.pillActive:hover` explícito. Este es
    exactamente el estado en el que queda el pill justo después de que un usuario le hace
    clic, así que era un bug real, no solo un artefacto de la captura de pantalla.
-3. **Fase 3 — Perfil de médico**: rediseño de `MedicoDetalle.tsx` + modelos de datos
-   `reviews.ts`/`faq.ts`/`articulos.ts`
+3. **✅ Fase 3 — Perfil de médico** (implementada): `MedicoDetalle.tsx` con breadcrumb,
+   header de 2 columnas (foto + nombre/especialidad/cédulas/bio/CTAs), fila de 3 tarjetas
+   (Servicios principales / Horarios de consulta / Ubicación con link a Google Maps), y fila
+   de 2 columnas (Reseñas / FAQ). Se agregó un componente `Accordion` reutilizable en `ui/`
+   (pensado para reusarse en Contacto/Agenda en fases siguientes).
+
+   **Decisión importante — no se fabricaron datos de médicos reales**: el mockup de
+   referencia muestra cédula profesional, años de experiencia, pacientes atendidos y reseñas
+   de pacientes con nombre y calificación. Esos son datos factuales específicos sobre
+   personas reales e identificables (los 29 médicos de `medicos.ts` son médicos reales del
+   cliente) — inventarlos habría significado publicar credenciales profesionales y
+   testimonios de pacientes falsos, lo cual es un riesgo real (legal y de confianza), no solo
+   un detalle de diseño. En su lugar:
+   - `resenas.ts` se creó con el arreglo `RESENAS` **vacío a propósito** — `ResenasSection`
+     muestra un estado honesto ("Aún no hay reseñas") en vez de un rating/testimonios
+     inventados. Cuando el cliente tenga reseñas reales verificadas, se agregan con el mismo
+     shape (`Resena`: autor, rating, texto, fecha) y el componente ya las muestra.
+   - `faq.ts` sí se llenó, pero con preguntas **genéricas de la práctica** (cómo agendar,
+     qué llevar, aseguradoras, cancelaciones) — no son afirmaciones específicas sobre un
+     médico en particular, así que no hay nada que fabricar.
+   - El tipo `Medico` se extendió con campos opcionales (`cedulaEspecialidad`, `formacion`,
+     `experienciaAnios`, `pacientesAtendidos`, `horariosConsulta`, `procedimientosDestacados`
+     ya existía) que hoy están **vacíos para los 29 médicos**. La UI los muestra solo si
+     existen; si no, muestra un texto honesto tipo "Formación, experiencia y otros datos de
+     este especialista se publicarán próximamente" o "Contáctanos para conocer los horarios".
+   - Se **omitió la sección de "Artículos y consejos" (blog)** del mockup — requeriría
+     inventar contenido editorial completo; queda para cuando exista la sección Blog.
+   - Ubicación usa un link de búsqueda de Google Maps por nombre del hospital (dato público
+     real), no coordenadas o dirección inventadas.
+
+   **Pendiente del cliente para completar esta fase de verdad**: cédulas profesionales,
+   formación, años de experiencia, servicios/procedimientos y horarios de consulta reales
+   por cada médico; reseñas de pacientes reales y verificadas (con su consentimiento).
+
+   Se eliminó `Badge.tsx`/`Badge.module.css` (sin uso tras quitar el badge de capítulo de
+   `MedicoCard` en la Fase 2 y de `MedicoDetalle` en esta fase).
 4. **Fase 4 — Agenda tu cita**: página y flujo nuevos (formulario, sin backend real todavía
    — solo UI, el envío requiere definir a dónde llega la cita)
 5. **Fase 5 — Contacto**: rediseño grande con canales múltiples y WhatsApp

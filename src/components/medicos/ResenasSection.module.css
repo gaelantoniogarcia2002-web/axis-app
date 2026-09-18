@@ -1,0 +1,73 @@
+.wrap {
+  background: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-card);
+  padding: var(--spacing-lg);
+  height: 100%;
+}
+
+.title {
+  font-family: var(--font-serif);
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: var(--color-navy);
+  margin-bottom: var(--spacing-md);
+}
+
+.empty {
+  font-size: 0.875rem;
+  color: var(--color-gray-600);
+}
+
+.resumen {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+}
+
+.promedio {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-navy);
+  line-height: 1;
+}
+
+.estrellas {
+  color: #f5a623;
+  font-size: 0.9375rem;
+  display: flex;
+  gap: 2px;
+  margin-bottom: 2px;
+}
+
+.count {
+  font-size: 0.8125rem;
+  color: var(--color-gray-600);
+}
+
+.lista {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.resena {
+  padding-top: var(--spacing-md);
+  border-top: 1px solid var(--color-gray-100);
+}
+
+.texto {
+  font-size: 0.875rem;
+  color: var(--color-gray-900);
+  font-style: italic;
+  line-height: 1.6;
+  margin-bottom: var(--spacing-xs);
+}
+
+.autor {
+  font-size: 0.8125rem;
+  color: var(--color-gray-600);
+  font-style: normal;
+}
