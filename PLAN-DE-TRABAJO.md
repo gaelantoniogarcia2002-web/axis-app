@@ -283,14 +283,30 @@ exacto por muestreo de píxeles.
 
 ### 8.4 Plan de implementación por fases
 
-1. **Fase 1 — Fundación**: Header, Footer y Home rediseñados con el nuevo sistema visual
-   (usa datos ya existentes, sin bloqueos de contenido)
+1. **✅ Fase 1 — Fundación** (implementada): Header (siempre blanco, sin transparencia sobre
+   hero oscuro), Footer (4 columnas + redes sociales) y Home completamente rediseñados:
+   Hero de 2 columnas (texto + panel gráfico azul con el isotipo, placeholder mientras no haya
+   foto real de equipo médico), barra de stats con íconos, fila "Especialistas destacados" +
+   "Nuestras especialidades", banner navy "Tu bienestar es nuestra prioridad", sección de
+   hospital con checklist. Se agregó `--color-whatsapp: #25D366` y la variante de botón
+   `whatsapp`. Se eliminaron `QueEsBadi.tsx` y el `EspecialidadesDestacadas.tsx` original
+   (reemplazados por los nuevos componentes de Home, sin uso en otras páginas). Verificado
+   que Nosotros/Médicos/etc. no se rompieron con el nuevo Header (siguen usando
+   `position: fixed` + el mismo `--header-height`, solo cambió a blanco permanente).
 2. **Fase 2 — Especialistas**: buscador + filtros + grid de tarjetas sobre `Medicos.tsx`
+   (ya existe un buscador + 2 selects de filtro; falta el estilo de pills y las tarjetas con
+   botón "Agendar")
 3. **Fase 3 — Perfil de médico**: rediseño de `MedicoDetalle.tsx` + modelos de datos
    `reviews.ts`/`faq.ts`/`articulos.ts`
 4. **Fase 4 — Agenda tu cita**: página y flujo nuevos (formulario, sin backend real todavía
    — solo UI, el envío requiere definir a dónde llega la cita)
 5. **Fase 5 — Contacto**: rediseño grande con canales múltiples y WhatsApp
+
+**Pendiente de decidir para fases siguientes**: la navegación del mockup es
+"Inicio, Especialistas, Especialidades, Agenda tu cita, Blog, Contacto" (sin "Nosotros" ni
+"Modelo"), distinta a la actual `NAV_LINKS`. Por ahora se dejó el menú actual intacto para no
+sacar a Nosotros/Modelo de la navegación; hay que decidir con el cliente si se ajusta el menú
+cuando existan las páginas de Agenda y Blog.
 
 **Bloqueos de contenido que persisten en todas las fases**: fotos reales de médicos, foto
 del hospital, foto de equipo médico para el hero — se usan placeholders hasta que se suban

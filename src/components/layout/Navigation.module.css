@@ -13,9 +13,10 @@
 .link {
   font-size: 0.9375rem;
   font-weight: 500;
-  color: rgba(255,255,255,0.85);
+  color: var(--color-gray-600);
   transition: color var(--transition-fast);
   position: relative;
+  padding-bottom: 4px;
 }
 
 .link::after {
@@ -25,29 +26,19 @@
   left: 0;
   right: 0;
   height: 2px;
-  background: var(--color-gold);
+  background: var(--color-blue);
   transform: scaleX(0);
   transition: transform var(--transition-fast);
 }
 
 .link:hover,
 .active {
-  color: var(--color-white);
+  color: var(--color-navy);
 }
 
 .link:hover::after,
 .active::after {
   transform: scaleX(1);
-}
-
-/* When scrolled (parent has scrolled class, colors shift) */
-:global(.scrolled) .link {
-  color: var(--color-gray-600);
-}
-
-:global(.scrolled) .link:hover,
-:global(.scrolled) .active {
-  color: var(--color-navy);
 }
 
 .linkMobile {

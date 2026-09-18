@@ -6,7 +6,7 @@
 
 .grid {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-columns: 1.6fr 1fr 1fr 1fr;
   gap: var(--spacing-2xl);
   padding-bottom: var(--spacing-2xl);
 }
@@ -41,6 +41,29 @@
   color: rgba(255,255,255,0.65);
   line-height: 1.7;
   max-width: 300px;
+  margin-bottom: var(--spacing-lg);
+}
+
+.social {
+  display: flex;
+  gap: var(--spacing-sm);
+}
+
+.socialLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  background: rgba(255,255,255,0.1);
+  color: var(--color-white);
+  font-size: 0.875rem;
+  transition: background var(--transition-fast);
+}
+
+.socialLink:hover {
+  background: var(--color-blue);
 }
 
 .colTitle {
@@ -53,30 +76,21 @@
   margin-bottom: var(--spacing-lg);
 }
 
-.links ul,
-.contactList {
+.list {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-sm);
-}
-
-.link {
-  font-size: 0.9375rem;
-  color: rgba(255,255,255,0.65);
-  transition: color var(--transition-fast);
-}
-
-.link:hover {
-  color: var(--color-white);
-}
-
-.contactList li {
-  display: flex;
   gap: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+}
+
+.list li {
+  display: flex;
+  gap: var(--spacing-sm);
   align-items: flex-start;
   font-size: 0.9375rem;
   color: rgba(255,255,255,0.65);
+  line-height: 1.5;
 }
 
 .icon {
@@ -86,6 +100,30 @@
   width: 14px;
 }
 
+.link {
+  color: rgba(255,255,255,0.65);
+  transition: color var(--transition-fast);
+}
+
+.link:hover {
+  color: var(--color-white);
+}
+
+.mapLink,
+.note {
+  font-size: 0.8125rem;
+  color: rgba(255,255,255,0.5);
+}
+
+.mapLink {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.mapLink:hover {
+  color: var(--color-white);
+}
+
 .bottom {
   border-top: 1px solid rgba(255,255,255,0.1);
   display: flex;
@@ -93,19 +131,42 @@
   justify-content: space-between;
   padding-top: var(--spacing-lg);
   padding-bottom: var(--spacing-lg);
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
 }
 
-.copy,
-.vumi {
+.copy {
   font-size: 0.875rem;
   color: rgba(255,255,255,0.45);
 }
 
-.vumi strong {
-  color: var(--color-gold);
+.legal {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-size: 0.875rem;
 }
 
-@media (max-width: 768px) {
+.legalLink {
+  color: rgba(255,255,255,0.65);
+  transition: color var(--transition-fast);
+}
+
+.legalLink:hover {
+  color: var(--color-white);
+}
+
+.legalDivider {
+  color: rgba(255,255,255,0.3);
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
   .grid {
     grid-template-columns: 1fr;
     gap: var(--spacing-xl);

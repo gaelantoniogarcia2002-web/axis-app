@@ -45,6 +45,16 @@
   color: var(--color-white);
 }
 
+.whatsapp {
+  background: transparent;
+  color: var(--color-whatsapp);
+  border-color: var(--color-whatsapp);
+}
+.whatsapp:hover {
+  background: var(--color-whatsapp);
+  color: var(--color-white);
+}
+
 .btn:disabled {
   opacity: 0.5;
   cursor: not-allowed;

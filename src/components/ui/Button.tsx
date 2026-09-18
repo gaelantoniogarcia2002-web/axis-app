@@ -3,7 +3,7 @@ import styles from './Button.module.css';
 
 interface ButtonProps {
   children: React.ReactNode;
-  variant?: 'primary' | 'outline' | 'ghost';
+  variant?: 'primary' | 'outline' | 'ghost' | 'whatsapp';
   href?: string;
   onClick?: () => void;
   type?: 'button' | 'submit' | 'reset';

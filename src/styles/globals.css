@@ -36,6 +36,7 @@
   /* colores contextuales (uso situacional, no colores base del sitio) */
   --color-urgencias:  #DC2626;
   --color-prevencion: #16A34A;
+  --color-whatsapp:   #25D366;
 
   /* --font-serif se mantiene por compatibilidad con los módulos CSS existentes;
      apunta a Batica Sans (marca/títulos), que en realidad es sans-serif */
