@@ -43,11 +43,17 @@ confirmados oficialmente por el manual:
   no solo una consulta puntual.
 - **Tipografía oficial: "Batica Sans"** — reemplaza a Playfair Display + Inter, que es lo que
   usa hoy el sitio.
-- **Reglas de uso del logo**: área de reserva mínima, variantes por contexto (urgencias/alto
-  impacto, eventos y comunicación premium, documentos corporativos monocromáticos, uso
-  general en sitio web/redes), positivo y negativo, usos incorrectos.
-- **Paleta de colores**: ⚠️ pendiente — no se pudo leer la sección 4 por el límite de tamaño
-  del archivo (ver sección 7).
+- **Reglas de uso del logo**: incluye isotipo, logotipo e imagotipo (cada uno con su área de
+  reserva); variantes por contexto (urgencias/alto impacto, eventos y comunicación premium,
+  documentos corporativos monocromáticos, uso general en sitio web/redes), positivo y
+  negativo, usos incorrectos. El archivo aislado (SVG/PNG) sigue sin existir en Drive
+  (`LOGO/` vacía) — pendiente que el cliente lo suba.
+- **Paleta de colores** (confirmada por el cliente a partir del manual):
+  - Azul primario: `#0270FD`
+  - Azul oscuro/secundario: `#002C83`
+  - Colores contextuales por aplicación: rojo (urgencias), verde (prevención/bienestar),
+    dorado (eventos/certificaciones premium) — sin código exacto todavía, son de uso
+    situacional, no colores base del sitio.
 
 ## 2. Estado actual del repo
 
@@ -72,8 +78,9 @@ Confirmado con el usuario: **es el mismo proyecto**, solo cambia de marca de "AX
 ## 3. Checklist de rebranding (texto y metadata)
 
 Puntos exactos en el código donde aparece "AXIS" y deben actualizarse. El naming
-("bädi Medical Group", tagline "SALUD QUE ACOMPAÑA") ya está confirmado por el Manual de
-Marca y los mockups; lo que falta es la paleta de color exacta y aplicar los cambios:
+("bädi Medical Group", tagline "SALUD QUE ACOMPAÑA") y la paleta de color primaria
+(`#0270FD` / `#002C83`) ya están confirmados por el Manual de Marca; lo que falta es el
+archivo de logo aislado y aplicar los cambios en el código:
 
 - [ ] `src/data/config.ts` — `nombre`, `nombreCompleto`, `descripcion`, `keywords`, label
       "Modelo AXIS" en `NAV_LINKS`
@@ -87,8 +94,9 @@ Marca y los mockups; lo que falta es la paleta de color exacta y aplicar los cam
 - [ ] `src/styles/globals.css` — reemplazar tipografías `Playfair Display` + `Inter` por
       **Batica Sans** (tipografía oficial del manual) — pendiente conseguir los archivos de
       fuente, ya que `TIPOGRAFÍAS/` en Drive sigue vacía
-- [ ] `src/styles/globals.css` — actualizar `--color-navy` / `--color-gold` con la paleta
-      oficial del manual en cuanto se obtengan los códigos exactos (sección 7)
+- [ ] `src/styles/globals.css` — actualizar `--color-navy` → `#002C83` y agregar
+      `--color-blue-primary: #0270FD` (o reemplazar el rol de `--color-gold` según se defina
+      el uso de acentos); revisar todos los componentes que referencian estos tokens
 
 ## 4. Estructura de `/src/assets` preparada
 
@@ -128,18 +136,22 @@ la rama `claude/drive-connection-2lkv44`, sin tocar `main` hasta validación del
 
 ## 7. Pendientes / bloqueos
 
-- **Paleta de color exacta** — el Manual de Marca (`Manual de Marca bädi.pdf`, 31 MB) supera
-  el límite de descarga de la herramienta de Drive (10 MB), así que no se pudo ver la
-  sección 4 (swatches de color, sin texto extraíble). Para desbloquear esto, lo más simple es
-  que el cliente exporte/comparta solo la página de la paleta de colores como imagen o PDF
-  más liviano.
-- Falta un archivo de **logo** reutilizable (SVG/PNG transparente) — la carpeta `LOGO/` en
-  Drive sigue vacía; los mockups y el manual solo lo muestran aplicado a piezas/mockups.
+Ya resueltos gracias al Manual de Marca y a la confirmación directa del cliente:
+
+- ✅ Naming y tono de marca: **"bädi Medical Group"**, tagline **"SALUD QUE ACOMPAÑA"**,
+  misión/visión/valores.
+- ✅ Paleta de color primaria: `#0270FD` (azul primario) y `#002C83` (azul oscuro/secundario).
+- ✅ Tipografía oficial: **Batica Sans**.
+
+Lo que sigue pendiente:
+
+- Falta un archivo de **logo** reutilizable (SVG/PNG transparente, con sus variantes
+  isotipo/logotipo/imagotipo) — la carpeta `LOGO/` en Drive sigue vacía; el manual y los
+  mockups solo lo muestran aplicado a piezas, no como archivo aislado.
 - Falta descargar los 4 archivos de `Patrones/` al repo (`src/assets/images/patrones/`).
-- Faltan los archivos de la tipografía oficial **Batica Sans** — `TIPOGRAFÍAS/` en Drive
-  sigue vacía.
+- Faltan los archivos de fuente de **Batica Sans** — `TIPOGRAFÍAS/` en Drive sigue vacía.
 - Falta que se suban fotos de médicos e imágenes hero a Drive (no hay ninguna todavía en
   ninguna carpeta ni en el manual).
-- Naming y tono de marca ya confirmados formalmente por el manual: **"bädi Medical Group"**,
-  tagline **"SALUD QUE ACOMPAÑA"**, misión/visión/valores — falta solo aplicarlos en el
-  código (checklist sección 3) y confirmar el dominio de email de contacto definitivo.
+- Falta confirmar el dominio de email de contacto definitivo (hoy `contacto@axisredmedica.mx`).
+- Colores contextuales (rojo urgencias, verde prevención, dorado eventos) sin código exacto
+  — de baja prioridad, son de uso situacional y no bloquean el rebranding base del sitio.
