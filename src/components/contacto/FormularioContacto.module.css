@@ -36,7 +36,7 @@
 }
 
 .input:focus {
-  border-color: var(--color-navy);
+  border-color: var(--color-blue);
 }
 
 .input::placeholder {
@@ -44,7 +44,7 @@
 }
 
 .inputError {
-  border-color: #dc3545;
+  border-color: var(--color-urgencias);
 }
 
 .select {
@@ -58,12 +58,12 @@
 
 .error {
   font-size: 0.8125rem;
-  color: #dc3545;
+  color: var(--color-urgencias);
 }
 
 .errorGlobal {
   font-size: 0.9rem;
-  color: #dc3545;
+  color: var(--color-urgencias);
   background: rgba(220,53,69,0.08);
   padding: var(--spacing-md);
   border-radius: var(--radius-sm);
@@ -90,8 +90,8 @@
   width: 64px;
   height: 64px;
   border-radius: 50%;
-  background: var(--color-navy);
-  color: var(--color-gold);
+  background: var(--color-blue);
+  color: var(--color-white);
   font-size: 1.75rem;
   display: flex;
   align-items: center;

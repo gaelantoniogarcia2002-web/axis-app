@@ -26,3 +26,22 @@ export const FAQ_MEDICO: PreguntaFrecuente[] = [
     respuesta: 'Sí. Escríbenos por WhatsApp o llama a bädi Medical Group con anticipación para reprogramar o cancelar tu cita sin costo.',
   },
 ];
+
+/** FAQ de la página de Contacto — enfocado en el proceso de canalización, no en un médico específico. */
+export const FAQ_CONTACTO: PreguntaFrecuente[] = [
+  {
+    id: 'como-agendar',
+    pregunta: '¿Cómo puedo agendar una cita?',
+    respuesta: 'Puedes agendar en línea desde "Agenda tu cita", escribirnos por WhatsApp o llamar directamente a nuestra línea principal. Un miembro del equipo confirmará tu cita.',
+  },
+  {
+    id: 'canalizacion',
+    pregunta: '¿Cómo canalizan mi caso con el especialista correcto?',
+    respuesta: 'Cuéntanos brevemente tu motivo de consulta (por WhatsApp, teléfono o el formulario) y nuestro equipo te conecta con el especialista de la red bädi más adecuado según tu caso.',
+  },
+  {
+    id: 'documentos',
+    pregunta: '¿Qué documentos necesito para mi primera consulta?',
+    respuesta: 'Identificación oficial, tu carnet o póliza de seguro médico (si aplica) y, de tenerlos, estudios o expedientes médicos previos relacionados con tu motivo de consulta.',
+  },
+];

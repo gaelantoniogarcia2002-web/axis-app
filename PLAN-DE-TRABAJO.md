@@ -372,7 +372,25 @@ exacto por muestreo de píxeles.
    la cita quedó registrada en un sistema real. Falta definir con el cliente a dónde debe
    llegar esta información (¿tabla de Supabase?, ¿correo?, ¿integración con su sistema de
    citas actual?) antes de lanzar esto a producción.
-5. **Fase 5 — Contacto**: rediseño grande con canales múltiples y WhatsApp
+5. **✅ Fase 5 — Contacto** (implementada): rediseño completo de `Contacto.tsx` siguiendo el
+   mockup: hero claro con CTA de WhatsApp grande + nota "Atención rápida, segura y
+   confidencial" (panel visual placeholder tipo headset, mismo tratamiento que el resto de
+   paneles sin foto real); 3 tarjetas de canal (Call Center, Coordinación médica, Atención a
+   pacientes); fila de formulario + sidebar (Información de contacto, Horario, Síguenos con
+   íconos de redes sociales, Visítanos con link a Google Maps); FAQ con el nuevo
+   `FAQ_CONTACTO` (agendar, canalización de casos, documentos — mismo criterio de la Fase 3
+   de no fabricar afirmaciones específicas, son preguntas genéricas del proceso); banner
+   final navy "Estamos para ayudarte" con CTA de WhatsApp.
+
+   Se agregó `coordinacion@badimedicalgroup.mx` como correo de coordinación médica,
+   siguiendo el mismo dominio ya usado para `contacto@`. De paso se alineó
+   `FormularioContacto.module.css` a los tokens de color actuales (focus azul en vez de
+   navy, rojo de error usando `--color-urgencias` en vez de un hex suelto, ícono de éxito
+   azul en vez de navy/gold).
+
+   **Con esto quedan completadas las 5 fases del rediseño UI/UX** basado en el mockup de
+   referencia. Ver sección 7 para los pendientes de contenido real (fotos, teléfono real,
+   datos de médicos) que aplican a todo el sitio.
 
 **Pendiente de decidir para fases siguientes**: la navegación del mockup es
 "Inicio, Especialistas, Especialidades, Agenda tu cita, Blog, Contacto" (sin "Nosotros" ni
