@@ -58,11 +58,18 @@ confirmados oficialmente por el manual:
     - Verde prevención/bienestar: `#16A34A`
     - Dorado eventos/premium: `#C9A84C` (se reutiliza el gold que ya usaba el sitio AXIS,
       porque el manual describe el mismo uso — eventos, reconocimientos, comunicación premium)
-- **Logo**: ya se descargó `LOGO.jpg` (4500×4500, fondo blanco) a
-  `src/assets/images/logo/logo.jpg`. Es un JPG sobre fondo blanco, no una versión
-  transparente/negativa — sirve para usos sobre fondo claro (favicon, header claro), pero
-  para el footer oscuro o aplicaciones en negativo haría falta pedir la variante correspondiente
-  (el manual menciona explícitamente "positivo y negativo" como parte de las variantes).
+- **Logo**: se descargaron 4 variantes (todas JPG 4500×4500, fondo blanco) a
+  `src/assets/images/logo/`:
+  - `logo.jpg` — vertical (isotipo arriba, wordmark debajo)
+  - `logo-horizontal.jpg` — isotipo + wordmark en línea
+  - `logo-isotipo.jpg` — solo la cruz, sin texto
+  - `logo-texto.jpg` — solo el wordmark "bädi MEDICAL GROUP"
+
+  Confirmado por el cliente: **no existe variante negativa** (para fondo oscuro/footer). Todas
+  son JPG sobre fondo blanco, no PNG/SVG transparente — al aplicarlas sobre el footer navy
+  actual del sitio quedarían con un recuadro blanco visible; para eso conviene usar
+  `logo-isotipo.jpg`/`logo-texto.jpg` recortados o pedir una versión en PNG transparente más
+  adelante si hace falta.
 
 ## 2. Estado actual del repo
 
@@ -119,7 +126,8 @@ src/assets/
 │   ├── hero/       ← imágenes hero por página (Home, Nosotros, etc.) — PENDIENTE
 │   ├── medicos/    ← fotos de perfil de cada médico — PENDIENTE
 │   ├── general/    ← fotos institucionales, hospital, misceláneos — PENDIENTE
-│   ├── logo/       ← ✅ logo.jpg (4500×4500, fondo blanco — falta variante negativa/transparente)
+│   ├── logo/       ← ✅ logo.jpg, logo-horizontal.jpg, logo-isotipo.jpg, logo-texto.jpg
+│   │                  (4500×4500, fondo blanco — no existe variante negativa, confirmado)
 │   ├── mockups/    ← ✅ Mkp 3-6.png (piezas de marca: gafete, tarjeta, llavero, empaque)
 │   └── patrones/   ← ✅ patron-01/02.png, patron-05/06.jpg (texturas decorativas de marca)
 └── fonts/          ← archivos de "Batica Sans" (tipografía oficial según Manual de Marca),
@@ -153,13 +161,15 @@ Ya resueltos gracias al Manual de Marca y a la confirmación directa del cliente
 - ✅ Paleta de color primaria: `#0270FD` (azul primario) y `#002C83` (azul oscuro/secundario);
   contextuales elegidas: `#DC2626` urgencias, `#16A34A` prevención, `#C9A84C` eventos.
 - ✅ Tipografía oficial: **Batica Sans**.
-- ✅ Logo principal descargado (`src/assets/images/logo/logo.jpg`, fondo blanco).
+- ✅ Las 4 variantes del logo descargadas (vertical, horizontal, isotipo, solo texto), todas
+  sobre fondo blanco. Confirmado con el cliente: no existe variante negativa.
 - ✅ 4 imágenes de `Patrones/` descargadas (`src/assets/images/patrones/`).
 
 Lo que sigue pendiente:
 
-- Falta la **variante negativa/transparente del logo** (para footer oscuro y aplicaciones en
-  negativo) — solo tenemos la versión sobre fondo blanco.
+- El logo solo existe en JPG con fondo blanco — para usarlo sobre el footer navy oscuro
+  actual conviene recortar/usar `logo-isotipo.jpg` o `logo-texto.jpg` con tratamiento, o pedir
+  un PNG transparente si el resultado visual no convence.
 - Faltan los archivos de fuente de **Batica Sans** — `TIPOGRAFÍAS/` en Drive sigue vacía.
 - Falta que se suban fotos de médicos e imágenes hero a Drive (no hay ninguna todavía en
   ninguna carpeta ni en el manual).
