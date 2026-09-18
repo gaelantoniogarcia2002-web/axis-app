@@ -200,3 +200,99 @@ Lo que sigue pendiente:
   versión vectorial (SVG) del isotipo de bädi, solo JPG rasterizado.
 - Colores contextuales (rojo urgencias, verde prevención, dorado eventos) sin código exacto
   — de baja prioridad, son de uso situacional y no bloquean el rebranding base del sitio.
+
+## 8. Rediseño UI/UX — referencia visual (mockup "TICENA" en Drive)
+
+El cliente compartió `pg web (1).pdf` (10.9 MB, en la raíz de la carpeta de Drive) como guía
+de UI/UX. Es un mockup con marca de ejemplo **"TICENA — Grupo Médico de Especialistas"**
+(nombre de plantilla, no nuestra marca) que define una estructura de sitio mucho más grande
+y funcional que la actual. Confirmado con el cliente: **replicar toda la estructura y flujos
+para bädi**, con los colores/marca reales de bädi.
+
+El PDF no se pudo descargar completo (supera el límite de 10MB), pero el cliente compartió
+capturas de pantalla de las 5 páginas clave, lo que permitió extraer el sistema de diseño
+exacto por muestreo de píxeles.
+
+### 8.1 Sistema de diseño confirmado por el mockup
+
+- **Azul primario de botones/CTA**: `~#0050F8`–`#0058F8` en el mockup → **coincide con
+  nuestro `--color-blue: #0270FD`** ya definido. No hace falta cambiarlo.
+- **Navy oscuro (banners/footer)**: `~#002878`–`#003080` en el mockup → **coincide con
+  nuestro `--color-navy: #002C83`** ya definido. Tampoco hace falta cambiarlo.
+- **Verde WhatsApp** (botones outline "Escríbenos por WhatsApp"): usar el verde oficial de
+  WhatsApp `#25D366` — nueva variable `--color-whatsapp`.
+- Tarjetas blancas con esquinas redondeadas grandes y sombra suave (`--radius-card`,
+  `--shadow-card` ya existen y sirven).
+- Botones: primario sólido azul, secundario outline azul ("Ver perfil"), WhatsApp outline
+  verde con ícono.
+- Fila superior de franja clara/durazno sobre el header parece ser fondo de la presentación
+  del PDF, no parte real del sitio — se ignora.
+
+### 8.2 Inventario de páginas y componentes nuevos
+
+**Home** (rediseño de lo existente):
+- Header: logo + nav con subrayado azul en el item activo + botón "Agenda tu cita" sólido
+- Hero: 2 columnas — texto (eyebrow ubicación, título, subtítulo, 2 CTAs: "Agenda tu cita"
+  sólido + "Escríbenos por WhatsApp" outline verde) a la izquierda, foto de equipo médico
+  con forma geométrica azul detrás a la derecha (**sin foto real todavía** — placeholder)
+- Barra de stats: 4 items con ícono + label + sublabel (especialistas, atención integral,
+  tecnología médica, hospital sede)
+- Fila 2 columnas: carrusel "Especialistas destacados" (tarjetas pequeñas circulares) +
+  grid "Nuestras especialidades" (íconos + label, con especialidades de `data/especialidades.ts`)
+- Banner navy "Tu bienestar es nuestra prioridad" con 4 íconos+label
+- Sección hospital: foto + checklist de instalaciones + botón outline
+- Footer: 4 columnas (marca + redes sociales, contacto, ubicación, horarios) + barra inferior
+
+**Especialistas** (nueva funcionalidad sobre la página `Medicos.tsx` existente):
+- Buscador por nombre/especialidad/síntoma
+- Pills de filtro por especialidad ("Todas" + top especialidades + "Más filtros")
+- Grid de tarjetas: foto, ❤ favorito, nombre, especialidad, desc corta, botones
+  "Ver perfil" (outline) + "Agendar" (sólido, con ícono calendario)
+- Banner "¿Prefieres agendar por WhatsApp?"
+
+**Perfil de médico** (`MedicoDetalle.tsx` — rediseño grande):
+- Breadcrumb, foto + info (cédulas, bio, formación/experiencia/pacientes), CTAs
+- 3 columnas: Servicios principales (checklist) / Horarios de consulta (tabla) /
+  Ubicación (mapa+foto)
+- Reseñas (rating agregado + estrellas + quotes) — **requiere nuevo modelo de datos**
+- FAQ acordeón — **requiere nuevo modelo de datos**
+- Artículos relacionados (blog) — **requiere nuevo modelo de datos + sección Blog**
+
+**Agenda tu cita** (página nueva, no existe hoy):
+- Header con foto de fondo del hospital
+- Stepper de 3 pasos (Selecciona / Confirma / Asiste)
+- Formulario: especialidad, médico, fecha, hora, modalidad, hospital, datos del paciente,
+  aseguradora, motivo (con contador de caracteres)
+- Sidebar: ayuda por WhatsApp, horarios, ubicación
+
+**Contacto** (rediseño grande de `Contacto.tsx`):
+- Hero con foto + CTA WhatsApp grande
+- 3 tarjetas de canal (Call Center, Coordinación médica, Atención a pacientes)
+- Formulario + Información de contacto + Síguenos + Visítanos (mapa)
+- FAQ acordeón
+- Banner final "Estamos para ayudarte"
+
+### 8.3 Modelos de datos nuevos requeridos
+
+- `reviews.ts` — reseñas por médico (autor, rating, texto)
+- `faq.ts` — preguntas frecuentes (generales y por médico/especialidad)
+- `articulos.ts` — blog/artículos de bienestar (para perfil de médico y sección Blog)
+- Extender `medicos.ts` con: foto (pendiente), badge tipo "Alta Especialidad", cédulas,
+  formación, años de experiencia, pacientes atendidos, servicios/procedimientos, horarios
+  de consulta por día, rating agregado
+
+### 8.4 Plan de implementación por fases
+
+1. **Fase 1 — Fundación**: Header, Footer y Home rediseñados con el nuevo sistema visual
+   (usa datos ya existentes, sin bloqueos de contenido)
+2. **Fase 2 — Especialistas**: buscador + filtros + grid de tarjetas sobre `Medicos.tsx`
+3. **Fase 3 — Perfil de médico**: rediseño de `MedicoDetalle.tsx` + modelos de datos
+   `reviews.ts`/`faq.ts`/`articulos.ts`
+4. **Fase 4 — Agenda tu cita**: página y flujo nuevos (formulario, sin backend real todavía
+   — solo UI, el envío requiere definir a dónde llega la cita)
+5. **Fase 5 — Contacto**: rediseño grande con canales múltiples y WhatsApp
+
+**Bloqueos de contenido que persisten en todas las fases**: fotos reales de médicos, foto
+del hospital, foto de equipo médico para el hero — se usan placeholders hasta que se suban
+a Drive. El número de WhatsApp/teléfono de call center también es un placeholder
+(`+52 55 5555-5555`) hasta que el cliente confirme el real.
